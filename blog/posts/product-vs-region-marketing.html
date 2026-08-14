@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   --accent-glow: rgba(170, 238, 68, 0.15);
   --text-primary: #FFFFFF;
   --text-secondary: #A0A0A0;
-  --text-tertiary: #666666;
+  --text-tertiary: #808080;
   --text-body: #D8D8D6;
   --text-dark: #0A0A0A;
   --border-dark: rgba(255, 255, 255, 0.08);
@@ -55,7 +55,7 @@ body.lang-en .prose > [data-lang="en"], body.lang-zh .prose > [data-lang="zh"] {
 .nav-cta:hover { background: #BBFF55 !important; transform: translateY(-1px); }
 
 .lang-switch { display: inline-flex; align-items: center; padding: 3px; margin-left: 8px; border-radius: 100px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark); font-family: var(--font-mono); font-size: 11px; }
-.lang-switch button { border: none; background: transparent; color: var(--text-tertiary); padding: 5px 12px; border-radius: 100px; cursor: pointer; font-family: inherit; font-size: inherit; letter-spacing: 0.05em; transition: color 0.2s, background 0.2s; }
+.lang-switch button { border: none; background: transparent; color: var(--text-secondary); padding: 5px 12px; border-radius: 100px; cursor: pointer; font-family: inherit; font-size: inherit; letter-spacing: 0.05em; transition: color 0.2s, background 0.2s; }
 .lang-switch button:hover { color: var(--text-primary); }
 body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch button[data-set="zh"] { background: var(--accent); color: var(--text-dark); font-weight: 600; }
 
@@ -159,8 +159,8 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 .bottom-cta { margin-top: 96px; padding: 40px; border-radius: 20px; background: linear-gradient(135deg, rgba(170,238,68,0.10) 0%, rgba(170,238,68,0.02) 100%); border: 1px solid rgba(170,238,68,0.25); text-align: center; }
 .bottom-cta h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--text-primary); }
 .bottom-cta p { color: var(--text-secondary); margin-bottom: 24px; }
-.bottom-cta-btn { display: inline-block; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; }
-.bottom-cta-btn:hover { background: #BBFF55; transform: translateY(-1px); }
+.prose a.bottom-cta-btn, .bottom-cta-btn { display: inline-block; border-bottom: none; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; }
+.prose a.bottom-cta-btn:hover, .bottom-cta-btn:hover { background: #BBFF55; color: var(--text-dark); transform: translateY(-1px); }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -199,7 +199,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
   .nav-links { gap: 0; }
   .nav-links a { padding: 6px 10px; }
   .lang-switch { margin-left: 4px; }
-  .lang-switch button { padding: 6px 12px; font-size: 11px; }
+  .lang-switch button { padding: 11px 14px; font-size: 12px; }
 }
 </style>
 </head>
@@ -228,7 +228,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
         <div class="author-avatar">M</div>
         <div>
           <div class="author-name">Mia Zheng</div>
-          <div class="author-role"><span data-lang="en">GTM Strategist & AI Builder</span><span data-lang="zh">GTM 策略师 · AI Builder</span></div>
+          <div class="author-role">GTM Lead</div>
         </div>
       </div>
     </div>
