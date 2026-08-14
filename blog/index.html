@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Mia Zheng</title>
+<meta name="description" content="Notes on GTM, growth, and building with AI agents. From a marketer who ships.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23AAEE44'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --bg-dark: #0A0A0A;
+  --bg-elev: #141814;
+  --bg-elev-2: #1a1e1a;
+  --accent: #AAEE44;
+  --accent-dim: #88BB33;
+  --accent-glow: rgba(170, 238, 68, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #666666;
+  --text-body: #D8D8D6;
+  --text-dark: #0A0A0A;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-strong: rgba(255, 255, 255, 0.18);
+  --font-sans: 'Geist', -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-size: 16px; line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 100;
+  display: flex; align-items: center; gap: 4px;
+  padding: 8px 8px 8px 24px;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid var(--border-dark-strong);
+  border-radius: 100px;
+  font-size: 14px;
+}
+.nav-logo, .nav-links a, .lang-switch button { white-space: nowrap; }
+.nav-logo { font-weight: 600; letter-spacing: -0.01em; margin-right: 24px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
+.nav-logo::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none;
+  padding: 8px 16px; border-radius: 100px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-cta {
+  background: var(--accent); color: var(--text-dark) !important;
+  font-weight: 500; padding: 8px 18px !important;
+  margin-left: 8px; border-radius: 100px;
+  transition: transform 0.2s, background 0.2s;
+}
+.nav-cta:hover { background: #BBFF55 !important; transform: translateY(-1px); }
+
+/* HEADER */
+.blog-header {
+  padding: 160px 32px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #060A06;
+}
+.blog-header::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 40%, rgba(170, 238, 68, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 40% at 80% 60%, rgba(170, 238, 68, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.blog-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding: 6px 14px;
+  border: 1px solid rgba(170, 238, 68, 0.3);
+  border-radius: 100px;
+  background: var(--accent-glow);
+  margin-bottom: 24px;
+  position: relative; z-index: 1;
+}
+.blog-title {
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  position: relative; z-index: 1;
+}
+.blog-title em {
+  font-family: var(--font-serif); font-style: italic;
+  font-weight: 400; color: var(--accent);
+}
+.blog-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative; z-index: 1;
+}
+
+/* FILTERS */
+.filter-bar {
+  max-width: 1240px;
+  margin: 48px auto 40px;
+  padding: 0 32px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-chip:hover { color: var(--text-primary); border-color: var(--border-dark-strong); }
+.filter-chip.active {
+  background: var(--accent);
+  color: var(--text-dark);
+  border-color: var(--accent);
+  font-weight: 500;
+}
+
+/* GRID */
+.posts-grid {
+  max-width: 1240px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Featured card spans full width */
+.post-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.post-card.featured .card-cover {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 0;
+}
+.post-card.featured .card-body {
+  padding: 40px 44px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.post-card.featured .card-title {
+  font-size: 32px;
+  line-height: 1.15;
+}
+.post-card.featured .card-excerpt {
+  display: block;
+}
+
+/* Regular card */
+.post-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border-dark);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, border-color 0.25s, background 0.25s;
+  display: flex; flex-direction: column;
+}
+.post-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(170, 238, 68, 0.3);
+  background: var(--bg-elev-2);
+}
+.card-cover {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #1a2a10 0%, #0f140f 100%);
+  border-bottom: 1px solid var(--border-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: uppercase; letter-spacing: 0.15em;
+  position: relative;
+  overflow: hidden;
+}
+.card-cover::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 30% 40%, rgba(170, 238, 68, 0.12) 0%, transparent 65%);
+}
+.card-cover.c2 { background: linear-gradient(135deg, #1a1425 0%, #0f0d14 100%); }
+.card-cover.c2::before { background: radial-gradient(ellipse 60% 60% at 70% 60%, rgba(140, 100, 255, 0.15) 0%, transparent 65%); }
+.card-cover.c3 { background: linear-gradient(135deg, #251a14 0%, #140e0d 100%); }
+.card-cover.c3::before { background: radial-gradient(ellipse 60% 60% at 40% 60%, rgba(255, 150, 80, 0.15) 0%, transparent 65%); }
+.card-cover.c4 { background: linear-gradient(135deg, #14251f 0%, #0d1410 100%); }
+.card-cover.c4::before { background: radial-gradient(ellipse 60% 60% at 60% 40%, rgba(80, 220, 180, 0.15) 0%, transparent 65%); }
+.card-cover.has-img { background: #F5F0E8; padding: 0; }
+.card-cover.has-img::before { display: none; }
+.card-cover.has-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-body {
+  padding: 24px 26px 26px;
+  display: flex; flex-direction: column;
+  flex: 1;
+  gap: 14px;
+}
+.card-tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border: 1px solid rgba(170, 238, 68, 0.25);
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+.card-excerpt {
+  display: none;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.card-meta {
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 6px;
+}
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
+
+/* NEWSLETTER STRIP */
+.newsletter {
+  max-width: 1080px;
+  margin: 0 auto 120px;
+  padding: 48px 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(170, 238, 68, 0.10) 0%, rgba(170, 238, 68, 0.02) 100%);
+  border: 1px solid rgba(170, 238, 68, 0.25);
+  display: flex; align-items: center; gap: 32px;
+  flex-wrap: wrap;
+}
+.newsletter-text { flex: 1; min-width: 280px; }
+.newsletter h3 {
+  font-size: 26px; font-weight: 600; letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.newsletter p { color: var(--text-secondary); font-size: 15px; }
+.newsletter-form { display: flex; gap: 10px; flex: 1; min-width: 280px; }
+.newsletter-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 100px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border-dark-strong);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+}
+.newsletter-input::placeholder { color: var(--text-tertiary); }
+.newsletter-input:focus { border-color: var(--accent); }
+.newsletter-btn {
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 100px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.newsletter-btn:hover { background: #BBFF55; transform: translateY(-1px); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .post-card.featured { grid-template-columns: 1fr; }
+  .post-card.featured .card-cover { aspect-ratio: 16/10; }
+  .post-card.featured .card-body { padding: 24px 26px 26px; }
+  .post-card.featured .card-title { font-size: 22px; }
+}
+@media (max-width: 600px) {
+  .posts-grid { grid-template-columns: 1fr; }
+  .nav { top: 12px; padding: 6px 6px 6px 18px; font-size: 13px; }
+  .nav-logo { margin-right: 12px; }
+  .nav-links a:not(.nav-cta):not(.active) { display: none; }
+  .nav-links a { padding: 6px 12px; }
+  .blog-header { padding: 120px 24px 40px; }
+  .newsletter { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">Mia Zheng</a>
+  <span class="nav-links">
+    <a href="../index.html#workflow">Work</a>
+    <a href="../index.html#impact">Impact</a>
+    <a href="index.html" class="active">Blog</a>
+    <a href="../index.html#contact" class="nav-cta">Contact</a>
+  </span>
+</nav>
+
+<header class="blog-header">
+  <span class="blog-eyebrow">The Blog</span>
+  <h1 class="blog-title">Notes from a marketer who <em>ships</em>.</h1>
+  <p class="blog-subtitle">GTM playbooks, growth experiments, and the messy reality of building with AI agents. New post every 2–3 days.</p>
+</header>
+
+<div class="filter-bar">
+  <button class="filter-chip active" data-filter="all">All</button>
+  <button class="filter-chip" data-filter="GTM">GTM</button>
+  <button class="filter-chip" data-filter="GEO">GEO</button>
+  <button class="filter-chip" data-filter="AI Agents">AI Agents</button>
+  <button class="filter-chip" data-filter="Growth">Growth</button>
+  <button class="filter-chip" data-filter="Playbooks">Playbooks</button>
+</div>
+
+<div class="posts-grid">
+
+  <!-- FEATURED -->
+  <a href="posts/ai-era-b2b-marketing.html" class="post-card featured" data-tags="GTM,AI Agents,Playbooks">
+    <div class="card-cover has-img"><img src="posts/images/ai-era-b2b-marketing-hero.jpg" alt="AI-era B2B marketing — bold, outbound, full-stack"></div>
+    <div class="card-body">
+      <div class="card-tag-row">
+        <span class="card-tag">Featured</span>
+        <span class="card-tag">GTM</span>
+        <span class="card-tag">AI Agents</span>
+      </div>
+      <h2 class="card-title">What qualified B2B marketing should look like in the AI era</h2>
+      <p class="card-excerpt">Bold, outgoing, and oriented toward full-stack development. The profile I want to build for myself — and the four roles I play in my current seat.</p>
+      <div class="card-meta">
+        <span>Aug 14, 2026</span>
+        <span class="meta-dot"></span>
+        <span>5 min read</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- REGULAR CARDS -->
+  <a href="posts/geo-ai-visibility.html" class="post-card" data-tags="GEO,Growth,AI Agents">
+    <div class="card-cover has-img"><img src="posts/images/geo-ai-visibility-hero.jpg" alt="SEO to GEO — from ranking to being cited"></div>
+    <div class="card-body">
+      <div class="card-tag-row"><span class="card-tag">GEO</span><span class="card-tag">Growth</span></div>
+      <h3 class="card-title">Which channels actually improve your product's visibility in AI answers?</h3>
+      <div class="card-meta"><span>Aug 12, 2026</span><span class="meta-dot"></span><span>3 min read</span></div>
+    </div>
+  </a>
+
+  <a href="posts/product-vs-region-marketing.html" class="post-card" data-tags="GTM,Playbooks">
+    <div class="card-cover has-img"><img src="posts/images/product-vs-region-marketing-hero.jpg" alt="Product x Region Marketing — independent, interdependent"></div>
+    <div class="card-body">
+      <div class="card-tag-row"><span class="card-tag">GTM</span><span class="card-tag">Playbooks</span></div>
+      <h3 class="card-title">What's the difference between Product Marketing and Region Marketing?</h3>
+      <div class="card-meta"><span>Aug 10, 2026</span><span class="meta-dot"></span><span>4 min read</span></div>
+    </div>
+  </a>
+
+</div>
+
+<script>
+// Tag filtering
+const chips = document.querySelectorAll('.filter-chip');
+const cards = document.querySelectorAll('.post-card');
+chips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const filter = chip.dataset.filter;
+    cards.forEach(card => {
+      const tags = (card.dataset.tags || '').split(',');
+      card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
