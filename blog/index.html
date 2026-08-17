@@ -327,7 +327,7 @@ body {
   .posts-grid { grid-template-columns: 1fr; }
   .nav { top: 12px; padding: 6px 6px 6px 18px; font-size: 13px; }
   .nav-logo { margin-right: 12px; }
-  .nav-links a:not(.nav-cta):not(.active) { display: none; }
+  .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
   .nav-links a { padding: 6px 12px; }
   .blog-header { padding: 120px 24px 40px; }
   .newsletter { padding: 32px 24px; }
@@ -364,8 +364,8 @@ body {
 <div class="posts-grid">
 
   <!-- FEATURED -->
-  <a href="posts/ai-era-b2b-marketing.html" class="post-card featured" data-tags="GTM,AI Agents,Playbooks">
-    <div class="card-cover has-img"><img src="posts/images/ai-era-b2b-marketing-hero.jpg" alt="AI-era B2B marketing — bold, outbound, full-stack"></div>
+  <a href="ai-era-b2b-marketing/" class="post-card featured" data-tags="GTM,AI Agents,Playbooks">
+    <div class="card-cover has-img"><img src="images/ai-era-b2b-marketing-hero.jpg" alt="AI-era B2B marketing — bold, outbound, full-stack"></div>
     <div class="card-body">
       <div class="card-tag-row">
         <span class="card-tag">Featured</span>
@@ -383,8 +383,8 @@ body {
   </a>
 
   <!-- REGULAR CARDS -->
-  <a href="posts/geo-ai-visibility.html" class="post-card" data-tags="GEO,Growth,AI Agents">
-    <div class="card-cover has-img"><img src="posts/images/geo-ai-visibility-hero.jpg" alt="SEO to GEO — from ranking to being cited"></div>
+  <a href="geo-vs-seo/" class="post-card" data-tags="GEO,Growth,AI Agents">
+    <div class="card-cover has-img"><img src="images/geo-vs-seo-hero.jpg" alt="SEO to GEO — from ranking to being cited"></div>
     <div class="card-body">
       <div class="card-tag-row"><span class="card-tag">GEO</span><span class="card-tag">Growth</span></div>
       <h3 class="card-title">Which channels actually improve your product's visibility in AI answers?</h3>
@@ -392,8 +392,8 @@ body {
     </div>
   </a>
 
-  <a href="posts/product-vs-region-marketing.html" class="post-card" data-tags="GTM,Playbooks">
-    <div class="card-cover has-img"><img src="posts/images/product-vs-region-marketing-hero.jpg" alt="Product x Region Marketing — independent, interdependent"></div>
+  <a href="product-vs-region/" class="post-card" data-tags="GTM,Playbooks">
+    <div class="card-cover has-img"><img src="images/product-vs-region-hero.jpg" alt="Product x Region Marketing — independent, interdependent"></div>
     <div class="card-body">
       <div class="card-tag-row"><span class="card-tag">GTM</span><span class="card-tag">Playbooks</span></div>
       <h3 class="card-title">What's the difference between Product Marketing and Region Marketing?</h3>
