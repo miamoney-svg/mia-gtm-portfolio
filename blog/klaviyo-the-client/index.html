@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Qualified B2B Marketing Should Look Like in the AI Era — Mia Zheng</title>
-<meta name="description" content="Bold, outbound, full-stack minded — the picture of a B2B marketer for the 1-person-plus-agent-team era. Four roles I play every week.">
+<title>What Does It Mean When a SaaS Company Becomes the "Client"? — Mia Zheng</title>
+<meta name="description" content="Klaviyo is the one company in our industry that genuinely earns the title of 'the client.' A look at what its market position teaches the rest of us.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23AAEE44'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,13 +34,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   --font-serif-zh: 'Noto Serif SC', 'Songti SC', serif;
 }
 
-body {
-  font-family: var(--font-sans);
-  background: var(--bg-dark);
-  color: var(--text-primary);
-  font-size: 16px; line-height: 1.6;
-  overflow-x: hidden;
-}
+body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-primary); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 body.lang-zh { font-family: var(--font-sans-zh); }
 body.lang-zh .prose em, body.lang-zh h1 em, body.lang-zh blockquote { font-family: var(--font-serif-zh); font-style: normal; }
 
@@ -83,7 +77,7 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 .author-name { font-weight: 500; font-size: 14px; }
 .author-role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
 .social-list { display: flex; flex-direction: column; gap: 4px; }
-.social-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; color: var(--text-secondary); text-decoration: none; font-size: 13px; border-radius: 10px; transition: color 0.2s, background 0.2s; }
+.social-link { display: flex; align-items: center; gap: 12px; padding: 14px 12px; color: var(--text-secondary); text-decoration: none; font-size: 13px; border-radius: 10px; transition: color 0.2s, background 0.2s; }
 .social-link:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
 .social-link svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.7; }
 
@@ -93,14 +87,13 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 .breadcrumb a:hover { color: var(--accent); }
 .tag-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
 .tag { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 100px; background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(170,238,68,0.25); }
-.article-hero h1 { font-size: clamp(36px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; margin-bottom: 28px; }
+.article-hero h1 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 28px; }
 .article-hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); }
-body.lang-zh .article-hero h1 { letter-spacing: 0; line-height: 1.25; }
+body.lang-zh .article-hero h1 { letter-spacing: 0; line-height: 1.3; }
 .meta-row { display: flex; align-items: center; gap: 20px; padding: 20px 0; margin-bottom: 48px; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); font-size: 13px; color: var(--text-tertiary); flex-wrap: wrap; }
 .meta-row strong { color: var(--text-primary); font-weight: 500; }
 .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
 
-/* COVER — supports real image */
 .cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; border: 1px solid var(--border-dark); margin-bottom: 56px; overflow: hidden; background: #F5F0E8; }
 .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -146,18 +139,26 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 .callout--pink .callout-icon { background: rgba(255,130,180,0.15); color: #FF9BC4; }
 .callout--pink .callout-title { color: #FF9BC4; }
 
-/* ROLE CARDS — 4 pillars */
-.role-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; }
-.role-card { padding: 22px 22px 24px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
-.role-num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 8px; }
-.role-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
-.role-sub { font-size: 13px; color: var(--text-tertiary); }
+/* STAT PULL */
+.stat-pull { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; }
+.stat-pull-item { padding: 24px 20px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
+.stat-pull-num { font-family: var(--font-serif); font-style: italic; font-size: 38px; line-height: 1; color: var(--accent); margin-bottom: 8px; }
+.stat-pull-label { font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* NEWS CLIPPING FIGURE — screenshot of a real article, shown as evidence with clear sourcing */
+.news-clip { margin: 40px 0; border-radius: 16px; border: 1px solid var(--border-dark); background: #F7F3EC; overflow: hidden; }
+.news-clip-bar { display: flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--bg-elev); border-bottom: 1px solid var(--border-dark); }
+.news-clip-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-dark-strong); }
+.news-clip-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-left: 4px; }
+.news-clip img { width: 100%; display: block; }
+.news-clip-caption { padding: 14px 18px; font-size: 13px; color: var(--text-tertiary); background: var(--bg-elev); border-top: 1px solid var(--border-dark); }
 
 .bottom-cta { margin-top: 96px; padding: 40px; border-radius: 20px; background: linear-gradient(135deg, rgba(170,238,68,0.10) 0%, rgba(170,238,68,0.02) 100%); border: 1px solid rgba(170,238,68,0.25); text-align: center; }
 .bottom-cta h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--text-primary); }
 .bottom-cta p { color: var(--text-secondary); margin-bottom: 24px; }
-.prose a.bottom-cta-btn, .bottom-cta-btn { display: inline-block; border-bottom: none; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; }
+.prose a.bottom-cta-btn, .bottom-cta-btn { display: inline-block; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; border-bottom: none; }
 .prose a.bottom-cta-btn:hover, .bottom-cta-btn:hover { background: #BBFF55; color: var(--text-dark); transform: translateY(-1px); }
+.prose a.bottom-cta-btn { border-bottom: none; }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -177,10 +178,9 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
   .side-toc .toc { border-left: none; padding: 0 8px 12px; }
   .side-social .sidebar-label { display: none; }
   .side-social .social-list { flex-direction: row; flex-wrap: wrap; gap: 6px; }
-  .side-social .social-link { padding: 14px 12px; }
   .side-social .social-link span { display: none; }
-  .role-grid { grid-template-columns: 1fr; }
-  .article-hero h1 { font-size: 32px; }
+  .stat-pull { grid-template-columns: 1fr; }
+  .article-hero h1 { font-size: 28px; }
   .prose { font-size: 16px; }
   .prose h2 { font-size: 24px; margin-top: 48px; }
   .prose h3 { font-size: 18px; margin-top: 32px; }
@@ -192,8 +192,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
   .nav { top: 12px; padding: 6px 6px 6px 18px; font-size: 13px; }
   .nav-logo { margin-right: 12px; }
   .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
-  .nav-links { gap: 0; }
-  .nav-links a { padding: 6px 10px; }
+  .nav-links a { padding: 6px 12px; }
   .lang-switch { margin-left: 4px; }
   .lang-switch button { padding: 11px 14px; font-size: 12px; }
 }
@@ -235,12 +234,10 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
         <div class="sidebar-label"><span data-lang="en">On this page</span><span data-lang="zh">本文内容</span></div>
         <nav class="toc">
           <ul>
-            <li><a href="#context" data-anchor="context" class="active"><span data-lang="en">The context: 1 person + agent team</span><span data-lang="zh">背景:1 个人 + agent 团队</span></a></li>
-            <li><a href="#sell" data-anchor="sell"><span data-lang="en">1. SELL — Talk to prospects directly</span><span data-lang="zh">1. SELL — 直接接触潜在客户</span></a></li>
-            <li><a href="#listen" data-anchor="listen"><span data-lang="en">2. LISTEN — Own the customer relationship</span><span data-lang="zh">2. LISTEN — 直接持有客户关系</span></a></li>
-            <li><a href="#operate" data-anchor="operate"><span data-lang="en">3. OPERATE — Own the lifecycle flywheel</span><span data-lang="zh">3. OPERATE — 掌握生命周期飞轮</span></a></li>
-            <li><a href="#augment" data-anchor="augment"><span data-lang="en">4. AUGMENT — AI is headcount, not a tool</span><span data-lang="zh">4. AUGMENT — AI 是人力,不是提效工具</span></a></li>
-            <li><a href="#why" data-anchor="why"><span data-lang="en">Why B2B marketing is a fascinating seat</span><span data-lang="zh">为什么 B2B marketing 很有魅力</span></a></li>
+            <li><a href="#numbers" data-anchor="numbers" class="active"><span data-lang="en">Start with the numbers</span><span data-lang="zh">数字优先</span></a></li>
+            <li><a href="#recognized" data-anchor="recognized"><span data-lang="en">Almost everyone recognizes Klaviyo</span><span data-lang="zh">几乎所有人都只认它</span></a></li>
+            <li><a href="#lose" data-anchor="lose"><span data-lang="en">Does this mean others are destined to lose?</span><span data-lang="zh">这是否意味着其他产品一定会输?</span></a></li>
+            <li><a href="#stages" data-anchor="stages"><span data-lang="en">Different stages, different strategies</span><span data-lang="zh">不同阶段,不同的增长策略</span></a></li>
           </ul>
         </nav>
       </details>
@@ -271,32 +268,31 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
   <header class="article-hero">
     <div class="breadcrumb">
-      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; GTM
+      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; <span data-lang="en">Industry Notes</span><span data-lang="zh">行业观察</span>
     </div>
 
     <div class="tag-row">
-      <span class="tag">GTM</span>
-      <span class="tag">AI Agents</span>
-      <span class="tag"><span data-lang="en">Playbooks</span><span data-lang="zh">思考</span></span>
+      <span class="tag"><span data-lang="en">Industry Notes</span><span data-lang="zh">行业观察</span></span>
     </div>
 
-    <h1 data-lang="en">What qualified B2B marketing should look like in the <em>AI era</em></h1>
-    <h1 data-lang="zh">AI 时代下,qualified 的 B2B marketing <em>应该是什么样子</em></h1>
+    <h1 data-lang="en">What does it mean when a SaaS company becomes the <em>"client"</em>?</h1>
+    <h1 data-lang="zh">当一家SaaS被称为<em>"甲方"</em>,是什么概念?</h1>
 
     <div class="meta-row">
       <span><strong>Mia Zheng</strong></span>
       <span class="meta-dot"></span>
-      <span data-lang="en">August 14, 2026</span>
-      <span data-lang="zh">2026年8月14日</span>
+      <span data-lang="en">August 18, 2026</span>
+      <span data-lang="zh">2026年8月18日</span>
       <span class="meta-dot"></span>
-      <span data-lang="en">5 min read</span>
-      <span data-lang="zh">阅读约 5 分钟</span>
+      <span data-lang="en">6 min read</span>
+      <span data-lang="zh">阅读约 6 分钟</span>
       <span class="meta-dot"></span>
-      <span>GTM</span>
+      <span data-lang="en">Industry Notes</span>
+      <span data-lang="zh">行业观察</span>
     </div>
 
     <div class="cover">
-      <img src="../images/ai-era-b2b-marketing-hero.jpg" alt="AI-era B2B marketing: bold, outbound, full-stack — sell, listen, operate, augment">
+      <img src="../images/saas-as-client-hero.jpg" alt="When does a SaaS company become the client? A lesson from Klaviyo's market position — 200K+ brands, $1.5B+ ARR, a powerful agency ecosystem.">
     </div>
   </header>
 
@@ -305,129 +301,164 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
       <!-- ================ ENGLISH ================ -->
       <div data-lang="en">
-        <p><strong>Bold, outgoing, and oriented toward full-stack development.</strong> This is my self-summary of the profile I want to build for myself, especially for small teams like ours.</p>
+        <p>When you see this title, you may find it strange. Shouldn't a SaaS company be the vendor rather than the client?</p>
 
-        <p>I've noticed many companies are adopting the collaboration model of one person plus an agent team.</p>
+        <p>The inspiration for this article came from a call I had with a marketing agency. In our industry, there is one company that can genuinely be described as the client: <strong>Klaviyo</strong>.</p>
 
-        <div class="callout callout--accent">
-          <div class="callout-icon">✦</div>
-          <div class="callout-body">
-            <div class="callout-title">Breakdown by roles</div>
-            <p><strong>Sell</strong> — reach out to potential clients directly. <strong>Listen</strong> — act as the direct account manager. <strong>Operate</strong> — own the full client lifecycle. <strong>Augment</strong> — leverage AI to go full-stack.</p>
+        <p>Some people may think I'm crazy for talking about one of my competitors. But from my perspective, every company or individual we compete with has something worth learning from — whether it is how they build their product or how they market themselves.</p>
+
+        <p>Klaviyo is still an industry pioneer to me, and a competitor I respect.</p>
+
+        <h2 id="numbers">Start with the numbers</h2>
+
+        <div class="stat-pull">
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">200K+</div>
+            <div class="stat-pull-label">clients in Q2 2026</div>
+          </div>
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">$1.53B</div>
+            <div class="stat-pull-label">estimated 2026 ARR</div>
           </div>
         </div>
 
-        <h2 id="context">The context: one person + an agent team</h2>
-        <p>Many companies I've been watching lately are adopting this collaboration model — one person plus an agent team. Not a big marketing org, not a big ads budget. Just one person with judgment, and AI covering the surface area a team used to cover.</p>
-        <p>For a team like ours, headcount is real and budget is real. This isn't a future-of-work essay — it's how we already operate.</p>
+        <p>What does that actually mean? Many of us are still thinking about ARR in millions. Klaviyo, however, is already operating at a <em>billion-dollar</em> annual revenue scale.</p>
 
-        <div class="role-grid">
-          <div class="role-card"><div class="role-num">01</div><div class="role-title">SELL</div><div class="role-sub">Reach out to potential clients</div></div>
-          <div class="role-card"><div class="role-num">02</div><div class="role-title">LISTEN</div><div class="role-sub">Act as account manager</div></div>
-          <div class="role-card"><div class="role-num">03</div><div class="role-title">OPERATE</div><div class="role-sub">Own the client lifecycle</div></div>
-          <div class="role-card"><div class="role-num">04</div><div class="role-title">AUGMENT</div><div class="role-sub">Go full-stack with AI</div></div>
+        <h2 id="recognized">Almost everyone recognizes Klaviyo</h2>
+
+        <p>I am not only talking about clients. I am also talking about agencies.</p>
+
+        <p>Let me share what I have observed in mainland China. Among almost all the clients I have interacted with, excluding SMB accounts that have not yet started marketing, nearly 90% have either used Klaviyo or mentioned it to me. That percentage is remarkable.</p>
+
+        <blockquote>
+          Klaviyo is the benchmark in this industry, so it is impossible not to use it.
+          <cite>— A client, on why they chose Klaviyo</cite>
+        </blockquote>
+
+        <p>I was genuinely surprised by Klaviyo's position in customers' minds. I also noticed that Klaviyo recently established its APAC headquarters in Singapore. This suggests that APAC may not yet be one of its strongest markets, which could mean the company has even more room to grow in the region.</p>
+
+        <div class="news-clip">
+          <div class="news-clip-bar">
+            <span class="news-clip-dot"></span><span class="news-clip-dot"></span><span class="news-clip-dot"></span>
+            <span class="news-clip-label">News clipping</span>
+          </div>
+          <img src="../images/klaviyo-news-clip.jpg" alt="News coverage: Klaviyo agency deal accelerates AI agent strategy as revenue grows 26% to $370.6 million">
+          <div class="news-clip-caption">Coverage of Klaviyo's Q2 2026 earnings and its acquisition of Agency's team and technology — cited here for context, not reproduced in full.</div>
         </div>
 
-        <h2 id="sell">1. You can act directly as sales</h2>
-        <p>You can act directly as sales to reach out to potential clients and sell. If a product is perfect, sales would be meaningless. Honestly, there is no perfect product in the world. So talk to clients boldly — tell them your product can solve one of their problems.</p>
+        <p>You can also take a look at how many agency partners Klaviyo lists on its official website. Many of these agencies rely heavily on the Klaviyo ecosystem. They use the title "Klaviyo Elite Partner" as a core part of their positioning, because brands may choose an agency partly because of that qualification.</p>
 
-        <h2 id="listen">2. You work as the direct account manager for clients</h2>
-        <p>Client feedback on the product comes during their entire usage lifecycle. You need to understand their experience — what works well and what doesn't. This is not limited to enterprise clients. If the product team won't do this job, you have to do it.</p>
-
-        <h2 id="operate">3. You take on operations, owning the full client lifecycle</h2>
-        <p>From demand gen, lead capture, pipeline management, activation, and payment conversion, to retention. Build self-sustaining growth flywheels for your channels. Figure out where the biggest gaps are.</p>
-
-        <h2 id="augment">4. Leverage AI to go as full-stack as you can</h2>
-        <p>Not to be perfect at everything. To be frank, I cannot find subordinates who can do everything — if they could, I would have to pay them my salary.</p>
-        <p>For small-size teams, AI acts like additional manpower, not just an efficiency booster. AI helps you find paths to success faster, yet core strategy still sits with humans.</p>
-
-        <div class="callout callout--warn">
-          <div class="callout-icon">!</div>
+        <div class="callout callout--info">
+          <div class="callout-icon">i</div>
           <div class="callout-body">
-            <div class="callout-title">Where the human still wins</div>
-            <p>AI helps you find paths to success faster. But the core strategy still sits with humans.</p>
+            <div class="callout-title">The agency flywheel</div>
+            <p>The managed-services and agency ecosystem is one of Klaviyo's strongest growth advantages. Reportedly, by early 2026, its agency and systems-integrator network, together with channel marketing, had influenced more than 40% of new business.</p>
           </div>
         </div>
 
-        <h2 id="why">Why B2B marketing is fascinating work</h2>
-        <p>These four points are exactly what I'm doing in my current role. I think B2B marketing is fascinating work. You are not only on the frontline — you also get to shape a truly valuable product.</p>
-        <p>If you're in a similar seat, or building toward one, I'd love to <a href="../../#contact">compare notes</a>.</p>
+        <h2 id="lose">Does this mean other products are destined to lose?</h2>
+
+        <p>Not necessarily.</p>
+
+        <p>We have successfully migrated several large clients. I cannot share my strategy publicly, but as I have said before, no product is perfect. Every client has different needs, and there is always a point of leverage if you look closely enough.</p>
+
+        <p>However, if you want to compete systematically, you still need a systematic marketing and channel strategy. More importantly, your product itself needs to withstand scrutiny. Otherwise, the client relationships you worked so hard to maintain will eventually break down.</p>
+
+        <h2 id="stages">Different stages require different growth strategies</h2>
+
+        <p>Every product inevitably goes through several stages. I call them:</p>
+
+        <p><em>PMF → aggressive, spend-heavy marketing → self-sustaining growth at scale</em></p>
+
+        <p>The growth strategy is different at each stage.</p>
+
+        <p>If this gives you something to think about, I would love to hear your perspective in the comments.</p>
 
         <div class="bottom-cta">
           <h3>More like this?</h3>
-          <p>I write about GTM, AI agents, and the messy middle of scaling a B2B product. New post every 2–3 days.</p>
+          <p>I write about GTM, GEO, AI agents, and the messy middle of scaling a B2B product. New post every 2–3 days.</p>
           <a href="../" class="bottom-cta-btn">Read more posts →</a>
         </div>
       </div>
 
       <!-- ================ CHINESE ================ -->
       <div data-lang="zh">
-        <p><strong>大胆的、外向的、full-stack 取向的。</strong>这是我给自己在这个岗位上不断勾勒的画像 —— 说实话,我觉得每一个身处小规模团队的 B2B marketer,现在都应该给自己画这样一张画像。</p>
+        <p>看到这个标题你可能会觉得奇怪——SaaS不应该是乙方吗?</p>
 
-        <p>不是"什么都做一点的 generalist",也不是"埋在一个渠道里的 specialist"。而是介于两者之间、又是全新的一种角色:一个人手规模不大的团队里的 operator —— 走得快、直接和客户对话、掌握完整漏斗、把 AI 当成额外的一双手,而不只是一个提效工具。</p>
+        <p>写这篇文章的灵感,来自我最近和一家营销机构的一通电话。在我们这个行业里,确实有一家公司够格被称为"甲方",那就是 <strong>Klaviyo</strong>。</p>
 
-        <div class="callout callout--accent">
-          <div class="callout-icon">✦</div>
-          <div class="callout-body">
-            <div class="callout-title">这个角色的形状</div>
-            <p>四个动作,每周都在做:<strong>Sell</strong> 直接接触潜在客户、<strong>Listen</strong> 从客户身上学、<strong>Operate</strong> 掌握生命周期、<strong>Augment</strong> 用 AI 放大自己。下面是我在每一件事上真实的时间投入。</p>
+        <p>有人可能会觉得我有点奇怪,为什么要写一篇关于自己竞品的文章。但站在我的角度,任何有竞争关系的公司或者人,身上都有值得学习的地方——无论是产品打法,还是营销方式。</p>
+
+        <p>Klaviyo对我来说始终是行业前辈,也是值得尊敬的对手。</p>
+
+        <h2 id="numbers-zh">数字优先</h2>
+
+        <div class="stat-pull">
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">20万+</div>
+            <div class="stat-pull-label">26年Q2品牌客户</div>
+          </div>
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">$15.3亿</div>
+            <div class="stat-pull-label">26年预计ARR</div>
           </div>
         </div>
 
-        <h2 id="context-zh">背景:1 个人 + agent 团队</h2>
-        <p>这段时间,我最欣赏的那些公司里都在流行同一种协作方式:<strong>1 个人 + 一支 agent 团队。</strong>不是 50 人的 marketing 部门,也不是一大堆预算的付费投放,而是一个判断力足够、覆盖面足够宽的 operator,配一支 AI 团队帮她做"第二班"的活。</p>
-        <p>对我们这样规模的团队来说 —— headcount 是真实的、预算是真实的、"再招一个 marketer"从来都不是一个轻松的答案 —— 这不是一篇"未来工作方式"的展望文章,这就是当下的工作方式。</p>
+        <p>这是什么概念?我们大多数公司的ARR还是以M(百万)为单位在算,而Klaviyo一年的收入已经是以<em>B(十亿)</em>起步了。</p>
 
-        <div class="role-grid">
-          <div class="role-card"><div class="role-num">01</div><div class="role-title">SELL</div><div class="role-sub">直接接触潜在客户</div></div>
-          <div class="role-card"><div class="role-num">02</div><div class="role-title">LISTEN</div><div class="role-sub">向客户学习</div></div>
-          <div class="role-card"><div class="role-num">03</div><div class="role-title">OPERATE</div><div class="role-sub">掌握生命周期</div></div>
-          <div class="role-card"><div class="role-num">04</div><div class="role-title">AUGMENT</div><div class="role-sub">用 AI 让自己跑得更快</div></div>
+        <h2 id="recognized-zh">几乎所有人都只认它</h2>
+
+        <p>这里说的不只是品牌客户,还包括代运营机构(agency)。</p>
+
+        <p>我可以跟你们讲讲中国大陆市场的情况:我接触过的所有客户里,除了那些还没开始做营销的SMB账户,几乎90%的客户都用过或者提到过Klaviyo。这个比例相当夸张。</p>
+
+        <blockquote>
+          毕竟Klaviyo是这个行业的标杆,不可能不用它。
+          <cite>— 一位客户,谈为什么选择Klaviyo</cite>
+        </blockquote>
+
+        <p>我确实很惊讶Klaviyo在客户心中的地位有这么高。我留意到Klaviyo刚在新加坡建立了亚太总部,这说明APAC目前还不是他们的主力市场,未来可能会加大投入力度。</p>
+
+        <div class="news-clip">
+          <div class="news-clip-bar">
+            <span class="news-clip-dot"></span><span class="news-clip-dot"></span><span class="news-clip-dot"></span>
+            <span class="news-clip-label">新闻截图</span>
+          </div>
+          <img src="../images/klaviyo-news-clip.jpg" alt="新闻报道:Klaviyo收购Agency加速AI agent战略,营收增长26%至3.706亿美元">
+          <div class="news-clip-caption">Klaviyo 26年Q2财报及收购Agency团队和技术的新闻报道截图——仅作背景引用,未转载全文。</div>
         </div>
 
-        <h2 id="sell-zh">1. SELL —— 直接接触潜在客户</h2>
-        <p>我不会坐等 pipeline 掉下来,而是主动去拿。</p>
-        <p>原因非常朴素:<strong>没有一款产品是完美的。</strong>任何一个告诉你"我们产品是自己会卖"的创始人,要么是太早期,要么是在骗你。销售的存在不是因为你的产品差,而是因为一个买家在某个周二下午,需要有人帮她相信 —— 你的产品能解决<em>她的</em>那个具体问题,而不是一个通用版本的问题。</p>
-        <p>所以我做 outbound。我直接和潜在客户对话。我不假装成一个客服机器人,也不做"hi,就是简单跟进一下"的 SDR。我告诉对方我们真正擅长解决的那一个问题、问对方真正想解的是什么,然后让对话自然走下去。</p>
-
-        <h2 id="listen-zh">2. LISTEN —— 直接持有客户关系</h2>
-        <p>最好的产品反馈从来不在 NPS 问卷里,而是在一个客户使用到第 4 个月时随口提到的那些小事 —— 她自己搭的 workaround、她放弃使用的功能、她差点流失的那个瞬间。</p>
-        <p>所以我不把付费客户交给客服工单系统就撒手。我留在这个链路里。不只是 enterprise 客户 —— 小客户同样重要,因为那才是产品在真实场景下的样子。</p>
+        <p>另外你可以去看看他们官网挂出来的合作代运营机构数量,这些agency几乎是靠Klaviyo吃饭的。他们把"Klaviyo Elite Partner"作为宣传自己的核心卖点,因为品牌客户会因为这个头衔选择这家agency。</p>
 
         <div class="callout callout--info">
           <div class="callout-icon">i</div>
           <div class="callout-body">
-            <div class="callout-title">一条我坚持的规则</div>
-            <p>如果你的产品团队没有系统性地在做客户研究,那么 marketing 就必须做。这个信号太值钱,不能放着不管 —— 而且它就是你和下一个潜在客户对话时的原材料。</p>
+            <div class="callout-title">代理商飞轮</div>
+            <p>代运营/Agency生态是Klaviyo一个非常强的增长优势——据说到2026年初,代理商和系统集成商网络这条渠道,已经影响了超过40%的新签业务。</p>
           </div>
         </div>
 
-        <h2 id="operate-zh">3. OPERATE —— 掌握生命周期飞轮</h2>
-        <p>Demand gen → lead capture → pipeline → 激活 → 付费 → 留存。这才是完整的闭环。如果你只掌握漏斗顶端,那你只是一台线索机,不是一个 marketer。</p>
-        <p>我尽量让自己手里握着每一个环节 —— 不是因为我想控制一切,而是因为最大的漏洞永远不在你以为它在的地方。你花三个月优化线索捕获,结果发现真正的问题在第 4 天的激活。这个视角,你从漏斗顶端是永远看不到的。</p>
-        <p>目标不是每个环节都自己做,而是每周都清楚地知道 —— <em>最大的洞在哪里</em> —— 并且拥有足够的上下文快速去补它。</p>
+        <h2 id="lose-zh">这是否意味着其他产品一定会输?</h2>
 
-        <h2 id="augment-zh">4. AUGMENT —— AI 是人力,不是提效工具</h2>
-        <p>有一个 framing 让我真正想通了这件事:对小团队来说,<strong>AI 不是一个提效工具,而是一个人力。</strong></p>
-        <p>讲实话?我找不到一个人类下属能把这些事情都做好 —— 竞品研究、内容起草、sequence、dashboard、合同 redline、客户调研、deck 制作。如果她真的存在,那我应该把我的工资发给她,而不是给她开 junior 的薪。</p>
-        <p>但一支 agent 团队可以。不是每件事都完美,但足以把那些"如果不这么做就永远做不到"的事情推进下去。这才是"full-stack"对我今天的含义 —— 不是"一个人把所有事情都做到完美",而是<em>"一个人 orchestrate 整个 stack,AI 去做过去需要多招一个人才能做的那部分"。</em></p>
+        <p>不一定。</p>
 
-        <div class="callout callout--warn">
-          <div class="callout-icon">!</div>
-          <div class="callout-body">
-            <div class="callout-title">人还是核心</div>
-            <p>核心的策略永远还在人身上。AI 不会告诉你要打哪一场仗 —— 它只是帮你更快找到那条已经走得通的路。这两件事一旦混淆,你会得到一堆漂亮的产出,但业务没有前进。</p>
-          </div>
-        </div>
+        <p>我们确实成功地从Klaviyo手里搬迁过一些大客户。具体策略我不方便公开讲,但正如我之前说过的,没有一个产品是完美的,因为每个客户的需求都不一样,你总能找到值得撬动他们的点。</p>
 
-        <h2 id="why-zh">为什么 B2B marketing 是一个很有魅力的位置</h2>
-        <p>大多数工作要么让你去<strong>思考</strong>一款产品,要么让你去<strong>卖</strong>一款产品。而 B2B marketing 是少数可以两件事一起做的位置 —— 你每周都冲在最前线,同时,你在前线收集到的反馈可以直接回到产品上,帮你打磨一款真正值得摆在人类面前的东西。</p>
-        <p>这就是我想成长为的那个版本。大胆的。外向的。Full-stack 取向的。</p>
-        <p>如果你也身处类似的位置 —— 或者正在往那个方向走 —— 欢迎来<a href="../../#contact">和我聊聊</a>。</p>
+        <p>但如果你想要系统性地正面竞争,还是需要建立成体系的营销策略和渠道,更重要的是,你的产品本身也要经得起推敲——不然费尽心思维系的客户关系,最终还是会破裂。</p>
+
+        <h2 id="stages-zh">不同阶段,不同的增长策略</h2>
+
+        <p>对于一个产品来说,必然会经历几个阶段,我把它们称为:</p>
+
+        <p><em>PMF —— 烧钱营销 —— 规模自增长</em></p>
+
+        <p>不同阶段,产品的增长方式是不一样的。</p>
+
+        <p>如果你看到这里也有自己的想法,欢迎留言聊聊你的看法。</p>
 
         <div class="bottom-cta">
           <h3>想看更多这样的内容?</h3>
-          <p>我会写 GTM、AI agents、以及放大一款 B2B 产品过程中那些混乱的中间地带。每 2–3 天更新一篇。</p>
+          <p>我会写 GTM、GEO、AI agents、以及放大一款 B2B 产品过程中那些混乱的中间地带。每 2–3 天更新一篇。</p>
           <a href="../" class="bottom-cta-btn">查看更多文章 →</a>
         </div>
       </div>
@@ -466,7 +497,6 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
     });
   }
 
-  // Exposed so the nav buttons (onclick="setLang('zh')") can reach it.
   window.setLang = function (lang) {
     document.body.classList.remove('lang-en', 'lang-zh');
     document.body.classList.add('lang-' + lang);
@@ -478,7 +508,6 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
   window.addEventListener('scroll', updateSpy);
 
-  // Init — runs after every declaration above is ready.
   var saved = null;
   try { saved = localStorage.getItem('mia-blog-lang'); } catch (e) {}
   if (saved === 'zh' || saved === 'en') {
