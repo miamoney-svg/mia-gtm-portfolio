@@ -1128,7 +1128,7 @@ body {
     gap: 4px;
   }
   .nav-logo { margin-right: 8px; white-space: nowrap; }
-  .nav-links a[href^="#"] { display: none; }
+  .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
   .nav-cta { margin-left: 0 !important; padding: 6px 14px !important; }
   .container { padding: 0 20px; }
   .section { padding: 80px 0; }
@@ -1586,6 +1586,7 @@ body {
       <p><strong>I break these workflows down as I build them.</strong> More on the two places I post.</p>
       <div class="aig-cta-links">
         <a class="aig-primary" href="https://www.linkedin.com/in/mia-zheng-a31214310" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        <a class="aig-ghost" href="https://x.com/MinxiaZhen73449" target="_blank" rel="noopener">X &middot; @MinxiaZhen73449 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
         <!-- TODO: replace # with 小红书 profile URL -->
         <a class="aig-ghost" href="#" target="_blank" rel="noopener">小红书 &middot; @馒头妈崽Mia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
       </div>
@@ -1649,6 +1650,7 @@ body {
         <div class="contact-cta-row">
           <a href="mailto:miamoneyzhaocai@gmail.com" class="btn btn-primary">Send Me a Message <span class="btn-arrow">↗</span></a>
           <a href="https://linkedin.com/in/mia-zheng-a31214310" class="btn btn-secondary">Connect on LinkedIn <span class="btn-arrow">↗</span></a>
+          <a href="https://x.com/MinxiaZhen73449" class="btn btn-secondary" target="_blank" rel="noopener">Follow on X <span class="btn-arrow">↗</span></a>
         </div>
         <a href="mailto:miamoneyzhaocai@gmail.com" class="contact-email">miamoneyzhaocai@gmail.com</a>
       </div>
