@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can marketing actually trust the results AI brings? — Mia Zheng</title>
+<meta name="description" content="AI helped me generate $1M in revenue! You're sick of hearing that. My take on what AI actually does: use it, don't depend on it.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23AAEE44'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --bg-dark: #0A0A0A;
+  --bg-card: #111A10;
+  --bg-elev: #141814;
+  --accent: #AAEE44;
+  --accent-dim: #88BB33;
+  --accent-glow: rgba(170, 238, 68, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #808080;
+  --text-body: #D8D8D6;
+  --text-dark: #0A0A0A;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-strong: rgba(255, 255, 255, 0.18);
+  --font-sans: 'Geist', -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans-zh: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-serif-zh: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-primary); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body.lang-zh { font-family: var(--font-sans-zh); }
+body.lang-zh .prose em, body.lang-zh h1 em, body.lang-zh blockquote { font-family: var(--font-serif-zh); font-style: normal; }
+
+[data-lang] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+body.lang-zh [data-lang="zh"] { display: revert; }
+body.lang-en .prose > [data-lang="en"], body.lang-zh .prose > [data-lang="zh"] { display: block; }
+
+/* NAV */
+.nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 4px; padding: 8px 8px 8px 24px; background: rgba(20,20,20,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 0.5px solid var(--border-dark-strong); border-radius: 100px; font-size: 14px; }
+.nav-logo, .nav-links a, .lang-switch button { white-space: nowrap; }
+.nav-logo { font-weight: 600; letter-spacing: -0.01em; margin-right: 24px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
+.nav-logo::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border-radius: 100px; transition: color 0.2s, background 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-cta { background: var(--accent); color: var(--text-dark) !important; font-weight: 500; padding: 8px 18px !important; margin-left: 8px; border-radius: 100px; transition: transform 0.2s, background 0.2s; }
+.nav-cta:hover { background: #BBFF55 !important; transform: translateY(-1px); }
+
+.lang-switch { display: inline-flex; align-items: center; padding: 3px; margin-left: 8px; border-radius: 100px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark); font-family: var(--font-mono); font-size: 11px; }
+.lang-switch button { border: none; background: transparent; color: var(--text-secondary); padding: 5px 12px; border-radius: 100px; cursor: pointer; font-family: inherit; font-size: inherit; letter-spacing: 0.05em; transition: color 0.2s, background 0.2s; }
+.lang-switch button:hover { color: var(--text-primary); }
+body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch button[data-set="zh"] { background: var(--accent); color: var(--text-dark); font-weight: 600; }
+
+/* LAYOUT */
+.article-wrap { max-width: 1240px; margin: 0 auto; padding: 140px 40px 120px; display: grid; grid-template-columns: 260px 1fr; grid-template-areas: "sidebar hero" "sidebar body"; column-gap: 80px; row-gap: 0; align-items: start; }
+.sidebar { grid-area: sidebar; position: sticky; top: 120px; display: flex; flex-direction: column; gap: 40px; }
+.article-hero { grid-area: hero; max-width: 720px; }
+.article-body { grid-area: body; max-width: 720px; }
+
+/* SIDEBAR */
+.sidebar-label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-tertiary); margin-bottom: 16px; }
+.toc { border-left: 1px solid var(--border-dark); }
+.toc ul { list-style: none; }
+.toc li a { display: block; padding: 10px 16px; color: var(--text-secondary); text-decoration: none; font-size: 14px; line-height: 1.5; border-left: 2px solid transparent; margin-left: -1px; transition: color 0.2s, border-color 0.2s; }
+.toc li a:hover { color: var(--text-primary); }
+.toc li a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+.author-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.author-name { font-weight: 500; font-size: 14px; }
+.author-role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+.social-list { display: flex; flex-direction: column; gap: 4px; }
+.social-link { display: flex; align-items: center; gap: 12px; padding: 14px 12px; color: var(--text-secondary); text-decoration: none; font-size: 13px; border-radius: 10px; transition: color 0.2s, background 0.2s; }
+.social-link:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+.social-link svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.7; }
+
+/* HERO */
+.breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; }
+.breadcrumb a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.tag-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tag { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 100px; background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(170,238,68,0.25); }
+.article-hero h1 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 28px; }
+.article-hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); }
+body.lang-zh .article-hero h1 { letter-spacing: 0; line-height: 1.3; }
+.meta-row { display: flex; align-items: center; gap: 20px; padding: 20px 0; margin-bottom: 48px; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); font-size: 13px; color: var(--text-tertiary); flex-wrap: wrap; }
+.meta-row strong { color: var(--text-primary); font-weight: 500; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
+
+.cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; border: 1px solid var(--border-dark); margin-bottom: 56px; overflow: hidden; background: #F5F0E8; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* PROSE */
+.prose { color: var(--text-body); font-size: 17px; line-height: 1.75; }
+body.lang-zh .prose { line-height: 1.85; }
+.prose > * + * { margin-top: 24px; }
+.prose h2 { font-family: var(--font-sans); font-size: 30px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.25; margin-top: 64px; margin-bottom: 20px; scroll-margin-top: 100px; }
+body.lang-zh .prose h2 { font-family: var(--font-sans-zh); letter-spacing: 0; }
+.prose h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 20px; }
+.prose h3 { font-size: 21px; font-weight: 600; color: var(--text-primary); margin-top: 40px; margin-bottom: 12px; letter-spacing: -0.01em; scroll-margin-top: 100px; }
+body.lang-zh .prose h3 { font-family: var(--font-sans-zh); letter-spacing: 0; }
+.prose p { margin: 0; }
+.prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(170,238,68,0.35); transition: border-color 0.2s, color 0.2s; }
+.prose a:hover { color: #BBFF55; border-bottom-color: var(--accent); }
+.prose strong { color: var(--text-primary); font-weight: 600; }
+.prose em { font-family: var(--font-serif); font-style: italic; color: var(--text-primary); font-size: 1.05em; }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li { margin-bottom: 10px; }
+.prose li::marker { color: var(--accent); }
+.prose blockquote { border-left: 3px solid var(--accent); padding: 8px 0 8px 24px; margin: 32px 0; font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--text-primary); }
+.prose blockquote cite { display: block; font-family: var(--font-sans); font-style: normal; font-size: 13px; color: var(--text-tertiary); margin-top: 12px; }
+body.lang-zh .prose blockquote { font-family: var(--font-serif-zh); font-style: normal; }
+body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
+
+/* CALLOUTS */
+.callout { padding: 24px 28px; border-radius: 16px; border: 1px solid var(--border-dark); background: var(--bg-elev); margin: 36px 0; display: flex; gap: 16px; align-items: flex-start; }
+.callout-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; flex-shrink: 0; }
+.callout-body { flex: 1; }
+.callout-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.callout p { font-size: 15px; line-height: 1.65; color: var(--text-body); }
+.callout p + p { margin-top: 10px; }
+.callout--accent { background: linear-gradient(135deg, rgba(170,238,68,0.08) 0%, rgba(170,238,68,0.02) 100%); border-color: rgba(170,238,68,0.25); }
+.callout--accent .callout-icon { background: rgba(170,238,68,0.18); color: var(--accent); }
+.callout--accent .callout-title { color: var(--accent); }
+.callout--info { background: linear-gradient(135deg, rgba(100,160,255,0.06) 0%, rgba(100,160,255,0.01) 100%); border-color: rgba(100,160,255,0.22); }
+.callout--info .callout-icon { background: rgba(100,160,255,0.15); color: #7AB0FF; }
+.callout--info .callout-title { color: #7AB0FF; }
+.callout--warn { background: linear-gradient(135deg, rgba(255,180,80,0.06) 0%, rgba(255,180,80,0.01) 100%); border-color: rgba(255,180,80,0.22); }
+.callout--warn .callout-icon { background: rgba(255,180,80,0.15); color: #FFC060; }
+.callout--warn .callout-title { color: #FFC060; }
+.callout--pink { background: linear-gradient(135deg, rgba(255,130,180,0.06) 0%, rgba(255,130,180,0.01) 100%); border-color: rgba(255,130,180,0.22); }
+.callout--pink .callout-icon { background: rgba(255,130,180,0.15); color: #FF9BC4; }
+.callout--pink .callout-title { color: #FF9BC4; }
+
+/* STAT PULL */
+.stat-pull { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; }
+.stat-pull-item { padding: 24px 20px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
+.stat-pull-num { font-family: var(--font-serif); font-style: italic; font-size: 38px; line-height: 1; color: var(--accent); margin-bottom: 8px; }
+.stat-pull-label { font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* NEWS CLIPPING FIGURE — screenshot of a real article, shown as evidence with clear sourcing */
+.news-clip { margin: 40px 0; border-radius: 16px; border: 1px solid var(--border-dark); background: #F7F3EC; overflow: hidden; }
+.news-clip-bar { display: flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--bg-elev); border-bottom: 1px solid var(--border-dark); }
+.news-clip-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-dark-strong); }
+.news-clip-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-left: 4px; }
+.news-clip img { width: 100%; display: block; }
+.news-clip-caption { padding: 14px 18px; font-size: 13px; color: var(--text-tertiary); background: var(--bg-elev); border-top: 1px solid var(--border-dark); }
+
+.bottom-cta { margin-top: 96px; padding: 40px; border-radius: 20px; background: linear-gradient(135deg, rgba(170,238,68,0.10) 0%, rgba(170,238,68,0.02) 100%); border: 1px solid rgba(170,238,68,0.25); text-align: center; }
+.bottom-cta h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--text-primary); }
+.bottom-cta p { color: var(--text-secondary); margin-bottom: 24px; }
+.prose a.bottom-cta-btn, .bottom-cta-btn { display: inline-block; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; border-bottom: none; }
+.prose a.bottom-cta-btn:hover, .bottom-cta-btn:hover { background: #BBFF55; color: var(--text-dark); transform: translateY(-1px); }
+.prose a.bottom-cta-btn { border-bottom: none; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .article-wrap { display: flex; flex-direction: column; gap: 0; padding: 110px 20px 80px; max-width: 720px; }
+  .sidebar { display: contents; position: static; }
+  .article-hero { order: 1; max-width: 100%; width: 100%; margin-bottom: 32px; }
+  .side-author { order: 2; width: 100%; margin-bottom: 24px; }
+  .side-toc { order: 3; width: 100%; margin-bottom: 24px; }
+  .side-social { order: 4; width: 100%; margin-bottom: 40px; }
+  .article-body { order: 5; max-width: 100%; width: 100%; }
+  .side-toc details { border: 1px solid var(--border-dark); border-radius: 12px; background: var(--bg-elev); overflow: hidden; }
+  .side-toc summary { list-style: none; padding: 14px 18px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 15px; color: var(--text-primary); }
+  .side-toc summary::-webkit-details-marker { display: none; }
+  .side-toc summary::after { content: '▾'; color: var(--text-tertiary); font-size: 12px; transition: transform 0.2s; }
+  .side-toc details[open] summary::after { transform: rotate(180deg); }
+  .side-toc .sidebar-label { display: none; }
+  .side-toc .toc { border-left: none; padding: 0 8px 12px; }
+  .side-social .sidebar-label { display: none; }
+  .side-social .social-list { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .side-social .social-link span { display: none; }
+  .stat-pull { grid-template-columns: 1fr; }
+  .article-hero h1 { font-size: 28px; }
+  .prose { font-size: 16px; }
+  .prose h2 { font-size: 24px; margin-top: 48px; }
+  .prose h3 { font-size: 18px; margin-top: 32px; }
+  .prose blockquote { font-size: 19px; }
+  .bottom-cta { padding: 28px 24px; margin-top: 64px; }
+  .bottom-cta h3 { font-size: 22px; }
+  .cover { margin-bottom: 0; }
+  .meta-row { margin-bottom: 32px; }
+  .nav { top: 12px; padding: 6px 6px 6px 18px; font-size: 13px; }
+  .nav-logo { margin-right: 12px; }
+  .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
+  .nav-links a { padding: 6px 12px; }
+  .lang-switch { margin-left: 4px; }
+  .lang-switch button { padding: 11px 14px; font-size: 12px; }
+}
+</style>
+</head>
+<body class="lang-en">
+
+<nav class="nav">
+  <a href="../../" class="nav-logo"><span>Mia Zheng</span></a>
+  <span class="nav-links">
+    <a href="../../#workflow"><span data-lang="en">Work</span><span data-lang="zh">作品</span></a>
+    <a href="../../#impact"><span data-lang="en">Impact</span><span data-lang="zh">成果</span></a>
+    <a href="../" class="active"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
+    <span class="lang-switch">
+      <button data-set="en" onclick="setLang('en')">EN</button>
+      <button data-set="zh" onclick="setLang('zh')">中文</button>
+    </span>
+    <a href="../../#contact" class="nav-cta"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+  </span>
+</nav>
+
+<div class="article-wrap">
+
+  <aside class="sidebar">
+    <div class="side-author">
+      <div class="sidebar-label"><span data-lang="en">Written by</span><span data-lang="zh">作者</span></div>
+      <div class="author-card">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Mia Zheng</div>
+          <div class="author-role">GTM Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-toc">
+      <details open>
+        <summary><span data-lang="en">Table of contents</span><span data-lang="zh">目录</span></summary>
+        <div class="sidebar-label"><span data-lang="en">On this page</span><span data-lang="zh">本文内容</span></div>
+        <nav class="toc">
+          <ul>
+            <li><a href="#h1" data-anchor="h1" class="active"><span data-lang="en">For senior marketing, you have to keep your feel for it</span><span data-lang="zh">对于Senior Marketing来说，你需要保持触感</span></a></li>
+            <li><a href="#h2" data-anchor="h2"><span data-lang="en">Customers aren't going to pay because of the AI video or image you made</span><span data-lang="zh">客户不会因为你做的AI 视频/图片买单</span></a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+
+    <div class="side-social">
+      <div class="sidebar-label"><span data-lang="en">Find me</span><span data-lang="zh">找到我</span></div>
+      <div class="social-list">
+        <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://x.com/MinxiaZhen73449" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>X / Twitter</span>
+        </a>
+        <a href="#" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L4 12l6 3 2 5 3-4 5-12z"/></svg>
+          <span>小红书 · @馒头妈崽Mia</span>
+        </a>
+        <a href="https://github.com" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 015.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.38-5.27 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.68.79.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <header class="article-hero">
+    <div class="breadcrumb">
+      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; Growth
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Growth</span> <span class="tag">GTM</span>
+    </div>
+
+    <h1 data-lang="en">Can marketing actually trust the results AI brings?</h1>
+    <h1 data-lang="zh">Marketing真的能相信AI带来的效果吗</h1>
+
+    <div class="meta-row">
+      <span><strong>Mia Zheng</strong></span>
+      <span class="meta-dot"></span>
+      <span data-lang="en">August 26, 2026</span>
+      <span data-lang="zh">2026年8月26日</span>
+      <span class="meta-dot"></span>
+      <span data-lang="en">4 min read</span>
+      <span data-lang="zh">阅读约 4 分钟</span>
+      <span class="meta-dot"></span>
+      <span>Growth</span>
+    </div>
+
+    <div class="cover"><img src="../images/trust-ai-hero.jpg" alt="Can marketing actually trust the results AI brings?"></div>
+  </header>
+
+  <div class="article-body">
+    <div class="prose">
+
+      <!-- ================ ENGLISH ================ -->
+      <div data-lang="en">
+<p>If you're fantasizing about building an agent team so you can sit back and watch users and revenue grow on their own, you've got it very wrong. I know there are a lot of people posting right now about how much money AI made them, or how many followers AI got them for them — either they're <b>lying</b>, or they <b>spent an enormous amount of time training that AI to do the work</b>.</p>
+
+<blockquote>My take: AI can only speed up how fast you find the path that works. The call is still yours.</blockquote>
+
+<p>Last week I sat in on an online session from Zapier and Clay about how they grow through social media. In the Q&amp;A, someone asked how they use AI these days. Almost every one of them said they don't really depend on AI. They use it to dramatically speed things up, or to visualize results really well. But the core decisions aren't made by AI. (The session was long and packed with substance — I'm still writing up my notes.)</p>
+
+<figure class="embedded-img" data-block="img"><img src="../images/trust-ai-trust-ai-inline-1.jpg" alt=""><figcaption contenteditable="true">Notes from the session</figcaption></figure>
+
+<h2 id="h1">For senior marketing, you have to keep your feel for it</h2>
+
+<p>You can't let your AI understand your prospects better than you do — if it does, the role should go to the AI. Your customers' pain and needs — you have to be able to say them out loud, not have to look at some long report AI hands you every time. You need to sit inside the customer quotes AI feeds you and feel what they're feeling.</p>
+
+<blockquote>Feel is really just empathy. That's something only humans have.</blockquote>
+
+<p>An example: I'll have Codex browse Reddit for me and pull together what my prospects are saying is painful, and Codex hands it back to me organized. But what I actually reply with, I have to think through myself. That's how you actually feel the pain your customer is in — and then you can have a real conversation with them.</p>
+
+<h2 id="h2">Customers aren't going to pay because of the AI video or image you made</h2>
+
+<p>This is something I figured out recently. I'm sure when you scroll short videos, you've come across cute little cats and dogs dancing — very short clips that somehow have tens of thousands of likes. You probably liked them too, and were amazed AI can make videos like that now. But look, the audience for that kind of video is not your customer.</p>
+
+<p>You all know a B2B customer's decision cycle is long — they usually have to read your product materials, compare you against competitors, run a trial, and discuss internally before they commit. You might generate a product intro demo or an animation with AI, but the customer is absolutely not going to buy your product because of that video. Making people laugh with an AI video is easy. Making a B-end customer pay for something? Not likely. <b>You can't expect someone to see a fake thing and then hand you real money for it.</b> There's still a gap between what AI delivers and what a product actually delivers.</p>
+        <div class="bottom-cta">
+          <h3>More like this?</h3>
+          <p>I write about GTM, GEO, AI agents, and the messy middle of scaling a B2B product. New post every 2–3 days.</p>
+          <a href="../" class="bottom-cta-btn">Read more posts →</a>
+        </div>
+      </div>
+
+      </div>
+
+      <!-- ================ CHINESE ================ -->
+      <div data-lang="zh">
+如果你妄想建立一个agent 团队，你就可以坐等用户规模和收入自增长，那就大错特错了。我知道现在有很多人都在发帖说自己的ai给自己赚了多少钱，或者帮他们做了多少粉丝，首先要么他们在<b>说谎话</b>， 或者他们<b>花了非常多的时间在调教他们的ai在帮他们干活</b>。<div><br></div><blockquote>我的看法是，AI只是能加速你找到成功的路，但是决定权还是在你。</blockquote><div><br></div><div>我上周听了Zapier和Clay的线上分享会， 讨论怎么在通过社交媒体做增长的，在Q&amp;A环节有人问，你们现在是怎么用ai的。 几乎他们每一个人给到的答复都是不会怎么依赖于AI的。虽然他们利用ai大幅的提高了效率，或者说将结果很好的可视化了。but 核心决策不会是ai来完成的。（他们的分享很长很干货，我正在整理当中）</div><div><img src="../images/trust-ai-trust-ai-inline-1.jpg" alt=""></div><h2 id="h1-zh">对于Senior Marketing来说，你需要保持触感</h2><div>你不能让你的ai比你更懂你的潜在客户，不然这个职位你给ai做得了。你的客户的痛点和诉求是什么， 你需要说的出来，而不是每次都需要看ai给你发的冗长的报告。你需要在ai发给你的客户原声里面感受潜在客户的痛苦，&nbsp;</div><blockquote>触感其实就是共情，这是人才有的能力。</blockquote><div>我举个例子，我会让codex帮我去操作浏览reddit看看我的潜在客户都在说什么痛点，codex整理好给我，但是最终回复的内容需要你自己去想，这样你就可以真切的感受到客户的痛点是什么，然后和客户对话。</div><div><br></div><h2 id="h2-zh">客户不会因为你做的AI 视频/图片买单</h2><div>这个是我前段时间突然想明白的。我相信你们刷短视频的时候都会刷到过很可爱的小猫小狗在跳舞，很短的视频居然有上万的点赞。这个时候你应该也会点赞，同时惊叹ai的视频居然能做到这个程度。 But请注意这种视频面向的人群和你的客户不一样。</div><div><br></div><div>你们都知道B2B的客户决策周期很长，他们一般要经过看过你的产品资料、不同竞品对比、试用以及内部商讨才能确定。你可能用ai生成一个产品介绍的demo或者动画效果， 但是客户绝对不会因为这个视频而为你的产品买单的。用AI视频让大家开怀一笑是容易的，但是让B端客户付费是不太可能的。<b>你不能指望他看了一个假的东西然后让他付出真金白银。</b>AI传递-&gt;产品交付还是有段距离的。</div><div><br></div>
+        <div class="bottom-cta">
+          <h3>想看更多这样的内容?</h3>
+          <p>我会写 GTM、GEO、AI agents、以及放大一款 B2B 产品过程中那些混乱的中间地带。每 2–3 天更新一篇。</p>
+          <a href="../" class="bottom-cta-btn">查看更多文章 →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tocLinks = document.querySelectorAll('.toc a[data-anchor]');
+
+  function suffix() {
+    return document.body.classList.contains('lang-zh') ? '-zh' : '';
+  }
+
+  function syncTocHrefs() {
+    var suf = suffix();
+    tocLinks.forEach(function (a) {
+      a.setAttribute('href', '#' + a.dataset.anchor + suf);
+    });
+  }
+
+  function updateSpy() {
+    var suf = suffix();
+    var y = window.scrollY + 140;
+    var nearBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 4;
+    var active = 0;
+    tocLinks.forEach(function (a, i) {
+      var s = document.getElementById(a.dataset.anchor + suf);
+      if (s && s.offsetTop <= y) active = i;
+    });
+    if (nearBottom) active = tocLinks.length - 1;
+    tocLinks.forEach(function (l, i) {
+      l.classList.toggle('active', i === active);
+    });
+  }
+
+  window.setLang = function (lang) {
+    document.body.classList.remove('lang-en', 'lang-zh');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    try { localStorage.setItem('mia-blog-lang', lang); } catch (e) {}
+    syncTocHrefs();
+    updateSpy();
+  };
+
+  window.addEventListener('scroll', updateSpy);
+
+  var saved = null;
+  try { saved = localStorage.getItem('mia-blog-lang'); } catch (e) {}
+  if (saved === 'zh' || saved === 'en') {
+    window.setLang(saved);
+  } else {
+    syncTocHrefs();
+    updateSpy();
+  }
+})();
+</script>
+
+</body>
+</html>
