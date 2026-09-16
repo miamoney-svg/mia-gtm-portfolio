@@ -73,7 +73,8 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 .toc li a:hover { color: var(--text-primary); }
 .toc li a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
 .author-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
-.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; overflow: hidden; }
+.author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .author-name { font-weight: 500; font-size: 14px; }
 .author-role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
 .social-list { display: flex; flex-direction: column; gap: 4px; }
@@ -90,8 +91,10 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 .article-hero h1 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 28px; }
 .article-hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); }
 body.lang-zh .article-hero h1 { letter-spacing: 0; line-height: 1.3; }
-.meta-row { display: flex; align-items: center; gap: 20px; padding: 20px 0; margin-bottom: 48px; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); font-size: 13px; color: var(--text-tertiary); flex-wrap: wrap; }
+.meta-row { display: flex; align-items: center; gap: 14px; padding: 20px 0; margin-bottom: 48px; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); font-size: 13px; color: var(--text-tertiary); flex-wrap: wrap; }
 .meta-row strong { color: var(--text-primary); font-weight: 500; }
+.meta-row .meta-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; display: block; flex-shrink: 0; border: 1px solid var(--border-dark); }
+.meta-row .meta-author { display: flex; align-items: center; gap: 10px; }
 .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
 
 .cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; border: 1px solid var(--border-dark); margin-bottom: 56px; overflow: hidden; background: #F5F0E8; }
@@ -261,7 +264,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
     <div class="side-author">
       <div class="sidebar-label"><span data-lang="en">Written by</span><span data-lang="zh">作者</span></div>
       <div class="author-card">
-        <div class="author-avatar">M</div>
+        <div class="author-avatar"><img src="../images/avatar.jpg" alt="Mia Zheng"></div>
         <div>
           <div class="author-name">Mia Zheng</div>
           <div class="author-role">GTM Lead</div>
@@ -318,7 +321,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
     <h1 data-lang="zh">增长团队今年会需要的两个新角色</h1>
 
     <div class="meta-row">
-      <span><strong>Mia Zheng</strong></span>
+      <span class="meta-author"><img class="meta-avatar" src="../images/avatar.jpg" alt="Mia Zheng" loading="lazy"><strong>Mia Zheng</strong></span>
       <span class="meta-dot"></span>
       <span data-lang="en">September 16, 2026</span>
       <span data-lang="zh">2026年9月16日</span>
