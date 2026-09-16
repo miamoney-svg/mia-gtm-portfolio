@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two New Roles Growth Teams Will Need This Year — Mia Zheng</title>
+<meta name="description" content="What kind of people do you actually need to do growth now? You might get a little clarity after reading this.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23AAEE44'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --bg-dark: #0A0A0A;
+  --bg-card: #111A10;
+  --bg-elev: #141814;
+  --accent: #AAEE44;
+  --accent-dim: #88BB33;
+  --accent-glow: rgba(170, 238, 68, 0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-tertiary: #808080;
+  --text-body: #D8D8D6;
+  --text-dark: #0A0A0A;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-strong: rgba(255, 255, 255, 0.18);
+  --font-sans: 'Geist', -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans-zh: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-serif-zh: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text-primary); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body.lang-zh { font-family: var(--font-sans-zh); }
+body.lang-zh .prose em, body.lang-zh h1 em, body.lang-zh blockquote { font-family: var(--font-serif-zh); font-style: normal; }
+
+[data-lang] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+body.lang-zh [data-lang="zh"] { display: revert; }
+body.lang-en .prose > [data-lang="en"], body.lang-zh .prose > [data-lang="zh"] { display: block; }
+
+/* NAV */
+.nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 4px; padding: 8px 8px 8px 24px; background: rgba(20,20,20,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 0.5px solid var(--border-dark-strong); border-radius: 100px; font-size: 14px; }
+.nav-logo, .nav-links a, .lang-switch button { white-space: nowrap; }
+.nav-logo { font-weight: 600; letter-spacing: -0.01em; margin-right: 24px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
+.nav-logo::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border-radius: 100px; transition: color 0.2s, background 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-cta { background: var(--accent); color: var(--text-dark) !important; font-weight: 500; padding: 8px 18px !important; margin-left: 8px; border-radius: 100px; transition: transform 0.2s, background 0.2s; }
+.nav-cta:hover { background: #BBFF55 !important; transform: translateY(-1px); }
+
+.lang-switch { display: inline-flex; align-items: center; padding: 3px; margin-left: 8px; border-radius: 100px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-dark); font-family: var(--font-mono); font-size: 11px; }
+.lang-switch button { border: none; background: transparent; color: var(--text-secondary); padding: 5px 12px; border-radius: 100px; cursor: pointer; font-family: inherit; font-size: inherit; letter-spacing: 0.05em; transition: color 0.2s, background 0.2s; }
+.lang-switch button:hover { color: var(--text-primary); }
+body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch button[data-set="zh"] { background: var(--accent); color: var(--text-dark); font-weight: 600; }
+
+/* LAYOUT */
+.article-wrap { max-width: 1240px; margin: 0 auto; padding: 140px 40px 120px; display: grid; grid-template-columns: 260px 1fr; grid-template-areas: "sidebar hero" "sidebar body"; column-gap: 80px; row-gap: 0; align-items: start; }
+.sidebar { grid-area: sidebar; position: sticky; top: 120px; display: flex; flex-direction: column; gap: 40px; }
+.article-hero { grid-area: hero; max-width: 720px; }
+.article-body { grid-area: body; max-width: 720px; }
+
+/* SIDEBAR */
+.sidebar-label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-tertiary); margin-bottom: 16px; }
+.toc { border-left: 1px solid var(--border-dark); }
+.toc ul { list-style: none; }
+.toc li a { display: block; padding: 10px 16px; color: var(--text-secondary); text-decoration: none; font-size: 14px; line-height: 1.5; border-left: 2px solid transparent; margin-left: -1px; transition: color 0.2s, border-color 0.2s; }
+.toc li a:hover { color: var(--text-primary); }
+.toc li a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+.author-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.author-name { font-weight: 500; font-size: 14px; }
+.author-role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+.social-list { display: flex; flex-direction: column; gap: 4px; }
+.social-link { display: flex; align-items: center; gap: 12px; padding: 14px 12px; color: var(--text-secondary); text-decoration: none; font-size: 13px; border-radius: 10px; transition: color 0.2s, background 0.2s; }
+.social-link:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+.social-link svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.7; }
+
+/* HERO */
+.breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; }
+.breadcrumb a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.tag-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tag { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 100px; background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(170,238,68,0.25); }
+.article-hero h1 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 28px; }
+.article-hero h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--accent); }
+body.lang-zh .article-hero h1 { letter-spacing: 0; line-height: 1.3; }
+.meta-row { display: flex; align-items: center; gap: 20px; padding: 20px 0; margin-bottom: 48px; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); font-size: 13px; color: var(--text-tertiary); flex-wrap: wrap; }
+.meta-row strong { color: var(--text-primary); font-weight: 500; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
+
+.cover { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; border: 1px solid var(--border-dark); margin-bottom: 56px; overflow: hidden; background: #F5F0E8; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* PROSE */
+.prose { color: var(--text-body); font-size: 17px; line-height: 1.75; }
+body.lang-zh .prose { line-height: 1.85; }
+.prose > * + * { margin-top: 24px; }
+.prose h2 { font-family: var(--font-sans); font-size: 30px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.25; margin-top: 64px; margin-bottom: 20px; scroll-margin-top: 100px; }
+body.lang-zh .prose h2 { font-family: var(--font-sans-zh); letter-spacing: 0; }
+.prose h2::before { content: ''; display: block; width: 32px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 20px; }
+.prose h3 { font-size: 21px; font-weight: 600; color: var(--text-primary); margin-top: 40px; margin-bottom: 12px; letter-spacing: -0.01em; scroll-margin-top: 100px; }
+body.lang-zh .prose h3 { font-family: var(--font-sans-zh); letter-spacing: 0; }
+.prose p { margin: 0; }
+.prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(170,238,68,0.35); transition: border-color 0.2s, color 0.2s; }
+.prose a:hover { color: #BBFF55; border-bottom-color: var(--accent); }
+.prose strong { color: var(--text-primary); font-weight: 600; }
+.prose em { font-family: var(--font-serif); font-style: italic; color: var(--text-primary); font-size: 1.05em; }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li { margin-bottom: 10px; }
+.prose li::marker { color: var(--accent); }
+.prose blockquote {
+  position: relative;
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(90deg, rgba(170,238,68,0.06) 0%, rgba(170,238,68,0.01) 60%, transparent 100%);
+  padding: 20px 24px 20px 28px;
+  margin: 36px 0;
+  border-radius: 4px 12px 12px 4px;
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 22px; line-height: 1.55;
+  color: var(--text-primary);
+}
+.prose blockquote::before {
+  content: '\201C';
+  position: absolute; top: -6px; left: 18px;
+  font-family: var(--font-serif);
+  font-size: 60px; line-height: 1;
+  color: var(--accent); opacity: 0.35;
+  pointer-events: none;
+}
+.prose blockquote cite { display: block; font-family: var(--font-sans); font-style: normal; font-weight: 400; font-size: 13px; color: var(--text-tertiary); margin-top: 12px; }
+body.lang-zh .prose blockquote { font-family: var(--font-serif-zh); font-style: normal; font-weight: 500; }
+body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
+
+/* Inline images — normalized by publish.mjs into <figure class="embedded-img">.
+   Centering + max-width fits any aspect ratio into the 720px column. */
+.prose figure.embedded-img { margin: 32px 0; text-align: center; }
+.prose figure.embedded-img img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-dark);
+  background: var(--bg-elev);
+}
+.prose figure.embedded-img figcaption {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+/* Safety net: any stray <img> we missed still gets centered and fitted. */
+.prose > img, .prose p > img, .prose div > img { display: block; max-width: 100%; height: auto; margin: 32px auto; border-radius: 12px; border: 1px solid var(--border-dark); }
+
+/* CALLOUTS */
+.callout { padding: 24px 28px; border-radius: 16px; border: 1px solid var(--border-dark); background: var(--bg-elev); margin: 36px 0; display: flex; gap: 16px; align-items: flex-start; }
+.callout-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; flex-shrink: 0; }
+.callout-body { flex: 1; }
+.callout-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.callout p { font-size: 15px; line-height: 1.65; color: var(--text-body); }
+.callout p + p { margin-top: 10px; }
+.callout--accent { background: linear-gradient(135deg, rgba(170,238,68,0.08) 0%, rgba(170,238,68,0.02) 100%); border-color: rgba(170,238,68,0.25); }
+.callout--accent .callout-icon { background: rgba(170,238,68,0.18); color: var(--accent); }
+.callout--accent .callout-title { color: var(--accent); }
+.callout--info { background: linear-gradient(135deg, rgba(100,160,255,0.06) 0%, rgba(100,160,255,0.01) 100%); border-color: rgba(100,160,255,0.22); }
+.callout--info .callout-icon { background: rgba(100,160,255,0.15); color: #7AB0FF; }
+.callout--info .callout-title { color: #7AB0FF; }
+.callout--warn { background: linear-gradient(135deg, rgba(255,180,80,0.06) 0%, rgba(255,180,80,0.01) 100%); border-color: rgba(255,180,80,0.22); }
+.callout--warn .callout-icon { background: rgba(255,180,80,0.15); color: #FFC060; }
+.callout--warn .callout-title { color: #FFC060; }
+.callout--pink { background: linear-gradient(135deg, rgba(255,130,180,0.06) 0%, rgba(255,130,180,0.01) 100%); border-color: rgba(255,130,180,0.22); }
+.callout--pink .callout-icon { background: rgba(255,130,180,0.15); color: #FF9BC4; }
+.callout--pink .callout-title { color: #FF9BC4; }
+
+/* STAT PULL */
+.stat-pull { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; }
+.stat-pull-item { padding: 24px 20px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
+.stat-pull-num { font-family: var(--font-serif); font-style: italic; font-size: 38px; line-height: 1; color: var(--accent); margin-bottom: 8px; }
+.stat-pull-label { font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* NEWS CLIPPING FIGURE — screenshot of a real article, shown as evidence with clear sourcing */
+.news-clip { margin: 40px 0; border-radius: 16px; border: 1px solid var(--border-dark); background: #F7F3EC; overflow: hidden; }
+.news-clip-bar { display: flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--bg-elev); border-bottom: 1px solid var(--border-dark); }
+.news-clip-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-dark-strong); }
+.news-clip-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-left: 4px; }
+.news-clip img { width: 100%; display: block; }
+.news-clip-caption { padding: 14px 18px; font-size: 13px; color: var(--text-tertiary); background: var(--bg-elev); border-top: 1px solid var(--border-dark); }
+
+.bottom-cta { margin-top: 96px; padding: 40px; border-radius: 20px; background: linear-gradient(135deg, rgba(170,238,68,0.10) 0%, rgba(170,238,68,0.02) 100%); border: 1px solid rgba(170,238,68,0.25); text-align: center; }
+.bottom-cta h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--text-primary); }
+.bottom-cta p { color: var(--text-secondary); margin-bottom: 24px; }
+.prose a.bottom-cta-btn, .bottom-cta-btn { display: inline-block; padding: 14px 28px; background: var(--accent); color: var(--text-dark); text-decoration: none; font-weight: 500; border-radius: 100px; transition: transform 0.2s, background 0.2s; border-bottom: none; }
+.prose a.bottom-cta-btn:hover, .bottom-cta-btn:hover { background: #BBFF55; color: var(--text-dark); transform: translateY(-1px); }
+.prose a.bottom-cta-btn { border-bottom: none; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .article-wrap { display: flex; flex-direction: column; gap: 0; padding: 110px 20px 80px; max-width: 720px; }
+  .sidebar { display: contents; position: static; }
+  .article-hero { order: 1; max-width: 100%; width: 100%; margin-bottom: 32px; }
+  .side-author { order: 2; width: 100%; margin-bottom: 24px; }
+  .side-toc { order: 3; width: 100%; margin-bottom: 24px; }
+  .side-social { order: 4; width: 100%; margin-bottom: 40px; }
+  .article-body { order: 5; max-width: 100%; width: 100%; }
+  .side-toc details { border: 1px solid var(--border-dark); border-radius: 12px; background: var(--bg-elev); overflow: hidden; }
+  .side-toc summary { list-style: none; padding: 14px 18px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 15px; color: var(--text-primary); }
+  .side-toc summary::-webkit-details-marker { display: none; }
+  .side-toc summary::after { content: '▾'; color: var(--text-tertiary); font-size: 12px; transition: transform 0.2s; }
+  .side-toc details[open] summary::after { transform: rotate(180deg); }
+  .side-toc .sidebar-label { display: none; }
+  .side-toc .toc { border-left: none; padding: 0 8px 12px; }
+  .side-social .sidebar-label { display: none; }
+  .side-social .social-list { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .side-social .social-link span { display: none; }
+  .stat-pull { grid-template-columns: 1fr; }
+  .article-hero h1 { font-size: 28px; }
+  .prose { font-size: 16px; }
+  .prose h2 { font-size: 24px; margin-top: 48px; }
+  .prose h3 { font-size: 18px; margin-top: 32px; }
+  .prose blockquote { font-size: 19px; }
+  .bottom-cta { padding: 28px 24px; margin-top: 64px; }
+  .bottom-cta h3 { font-size: 22px; }
+  .cover { margin-bottom: 0; }
+  .meta-row { margin-bottom: 32px; }
+  .nav { top: 12px; padding: 6px 6px 6px 18px; font-size: 13px; }
+  .nav-logo { margin-right: 12px; }
+  .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
+  .nav-links a { padding: 6px 12px; }
+  .lang-switch { margin-left: 4px; }
+  .lang-switch button { padding: 11px 14px; font-size: 12px; }
+}
+</style>
+</head>
+<body class="lang-en">
+
+<nav class="nav">
+  <a href="../../" class="nav-logo"><span>Mia Zheng</span></a>
+  <span class="nav-links">
+    <a href="../../#workflow"><span data-lang="en">Work</span><span data-lang="zh">作品</span></a>
+    <a href="../../#impact"><span data-lang="en">Impact</span><span data-lang="zh">成果</span></a>
+    <a href="../" class="active"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
+    <span class="lang-switch">
+      <button data-set="en" onclick="setLang('en')">EN</button>
+      <button data-set="zh" onclick="setLang('zh')">中文</button>
+    </span>
+    <a href="../../#contact" class="nav-cta"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+  </span>
+</nav>
+
+<div class="article-wrap">
+
+  <aside class="sidebar">
+    <div class="side-author">
+      <div class="sidebar-label"><span data-lang="en">Written by</span><span data-lang="zh">作者</span></div>
+      <div class="author-card">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Mia Zheng</div>
+          <div class="author-role">GTM Lead</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-toc">
+      <details open>
+        <summary><span data-lang="en">Table of contents</span><span data-lang="zh">目录</span></summary>
+        <div class="sidebar-label"><span data-lang="en">On this page</span><span data-lang="zh">本文内容</span></div>
+        <nav class="toc">
+          <ul>
+            <li><a href="#h1" data-anchor="h1" class="active"><span data-lang="en">GTM Engineer</span><span data-lang="zh">GTM Engineer</span></a></li>
+            <li><a href="#h2" data-anchor="h2"><span data-lang="en">GEO / AEO</span><span data-lang="zh">GEO / AEO</span></a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+
+    <div class="side-social">
+      <div class="sidebar-label"><span data-lang="en">Find me</span><span data-lang="zh">找到我</span></div>
+      <div class="social-list">
+        <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://x.com/MinxiaZhen73449" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>X / Twitter</span>
+        </a>
+        <a href="#" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L4 12l6 3 2 5 3-4 5-12z"/></svg>
+          <span>小红书 · @馒头妈崽Mia</span>
+        </a>
+        <a href="https://github.com" class="social-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 015.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.38-5.27 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.68.79.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <header class="article-hero">
+    <div class="breadcrumb">
+      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; GTM
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">GTM</span> <span class="tag">Growth</span> <span class="tag">GEO</span>
+    </div>
+
+    <h1 data-lang="en">Two New Roles Growth Teams Will Need This Year</h1>
+    <h1 data-lang="zh">增长团队今年会需要的两个新角色</h1>
+
+    <div class="meta-row">
+      <span><strong>Mia Zheng</strong></span>
+      <span class="meta-dot"></span>
+      <span data-lang="en">September 16, 2026</span>
+      <span data-lang="zh">2026年9月16日</span>
+      <span class="meta-dot"></span>
+      <span data-lang="en">3 min read</span>
+      <span data-lang="zh">阅读约 3 分钟</span>
+      <span class="meta-dot"></span>
+      <span>GTM</span>
+    </div>
+
+    <div class="cover"><img src="../images/marketingrole-hero.jpg" alt="Two New Roles Growth Teams Will Need This Year"></div>
+  </header>
+
+  <div class="article-body">
+    <div class="prose">
+
+      <!-- ================ ENGLISH ================ -->
+      <div data-lang="en">
+<div>Two roles I've started seeing pop up all the time this year — I believe they'll be what growth teams need most going forward.</div><h2 id="h1">GTM Engineer</h2><div>You see these hiring posts all over LinkedIn.</div><blockquote>The way I see it, this role uses AI really well, takes on the requests we used to hand off to engineering, and then closes the growth loop on its own.</blockquote><div>To me it also feels like a role that <b>combines marketing and revenue operations</b>. Key capabilities:</div><ol><li><b>Data / lead infrastructure</b>: enrichment with Clay, Apollo, Clearbit; building ICP scoring and tiering logic.</li><li><b>Outbound automation</b>: multichannel sequences (email + LinkedIn + phone), email infrastructure (SPF/DKIM/DMARC), triggering outreach based on intent signals.</li><li><b>CRM / tech stack management</b>: Salesforce/HubSpot architecture, cross-system integration (API/Zapier/Make/n8n), keeping data integrity.</li><li><b>AI Agent orchestration</b> (the newest and highest-weighted piece for 2026): building agents that autonomously run the full "research → judge → execute" flow, not just simple automation scripts — e.g. an inbound lead comes in, the agent does the company research, fit call, routing, outreach prep, and logging on its own, only pulling in a human at the key decision points.</li></ol><h2 id="h2">GEO / AEO</h2><div>Lengthy, but worthy. I believe many people have already started on this.</div><blockquote>How do you make your product/brand the answer that ChatGPT, Perplexity, Google AI Overviews, and Claude spit out?</blockquote><ol><li><b>Technical audit and structured data</b>: "translate" your site into a format AI crawlers can read, so AI can actually understand your content.</li><li><b>Content strategy and optimization</b>: study how users would ask AI, and rewrite content into the shape "AI most loves to quote directly" — title as question, opening as answer, backed by data, no fluff.</li><li><b>Monitoring and reporting</b>: use dedicated tools to track daily whether AI mentions you, whether the tone is good, whether you beat competitors, and report on AI-visibility changes.</li></ol><blockquote>The first one helps your growth flywheel run itself; the second one makes you the answer AI gives.</blockquote>
+        <div class="bottom-cta">
+          <h3>More like this?</h3>
+          <p>I write about GTM, GEO, AI agents, and the messy middle of scaling a B2B product. New post every 2–3 days.</p>
+          <a href="../" class="bottom-cta-btn">Read more posts →</a>
+        </div>
+      </div>
+
+      <!-- ================ CHINESE ================ -->
+      <div data-lang="zh">
+<div>今年我开始频繁刷到<b>两个角色</b>，我相信会是未来增长团队最需要的。</div><h2 id="h1-zh">GTM Engineer</h2><div>LinkedIn 帖子经常会刷到这类招聘帖。</div><blockquote>在我看来，这个角色能很好地利用 AI，承担原本需要提给研发的需求，然后实现增长 loop 的自闭环。</blockquote><div>我认为也像是把 <b>marketing 和 revenue operation 结合</b>的角色。关键能力如下：</div><ol><li><b>数据/线索基础设施</b>：用 Clay、Apollo、Clearbit 做 enrichment，搭建 ICP 打分和分层逻辑。</li><li><b>Outbound 自动化</b>：多渠道序列（邮件 + LinkedIn + 电话）、邮件基础设施（SPF/DKIM/DMARC）、基于 intent 信号触发外呼。</li><li><b>CRM/技术栈管理</b>：Salesforce/HubSpot 架构、系统间集成（API/Zapier/Make/n8n）、维护数据完整性。</li><li><b>AI Agent 编排</b>（2026 年新增、权重最高的一块）：搭建能自主完成"研究 → 判断 → 执行"全流程的 Agent，而不是简单的自动化脚本——比如一个 inbound 线索进来，Agent 自动完成公司调研、fit 判断、路由分配、准备 outreach、记录结果，全程只在关键节点需要人介入。</li></ol><h2 id="h2-zh">GEO / AEO</h2><div>Lengthy，but worthy。我相信很多人已经开始做了。</div><blockquote>如何让你的产品/品牌成为 ChatGPT、Perplexity、Google AI Overviews、Claude 吐出的答案。</blockquote><ol><li><b>技术审计与结构化数据</b>：把网站"翻译"成 AI 爬虫看得懂的格式，让 AI 能顺利读懂你的内容。</li><li><b>内容策略与优化</b>：研究用户会怎么问 AI，把内容改写成"AI 最爱直接引用"的样子——标题即问题，开头即答案，带数据不空谈。</li><li><b>监测与报告</b>：用专门工具天天追踪 AI 提没提到你、语气好不好、比竞品强不强，汇报 AI 可见度变化。</li></ol><blockquote>前者帮你把增长飞轮跑起来，后者让你成为 AI 的答案。</blockquote>
+        <div class="bottom-cta">
+          <h3>想看更多这样的内容?</h3>
+          <p>我会写 GTM、GEO、AI agents、以及放大一款 B2B 产品过程中那些混乱的中间地带。每 2–3 天更新一篇。</p>
+          <a href="../" class="bottom-cta-btn">查看更多文章 →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tocLinks = document.querySelectorAll('.toc a[data-anchor]');
+
+  function suffix() {
+    return document.body.classList.contains('lang-zh') ? '-zh' : '';
+  }
+
+  function syncTocHrefs() {
+    var suf = suffix();
+    tocLinks.forEach(function (a) {
+      a.setAttribute('href', '#' + a.dataset.anchor + suf);
+    });
+  }
+
+  function updateSpy() {
+    var suf = suffix();
+    var y = window.scrollY + 140;
+    var nearBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 4;
+    var active = 0;
+    tocLinks.forEach(function (a, i) {
+      var s = document.getElementById(a.dataset.anchor + suf);
+      if (s && s.offsetTop <= y) active = i;
+    });
+    if (nearBottom) active = tocLinks.length - 1;
+    tocLinks.forEach(function (l, i) {
+      l.classList.toggle('active', i === active);
+    });
+  }
+
+  window.setLang = function (lang) {
+    document.body.classList.remove('lang-en', 'lang-zh');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    try { localStorage.setItem('mia-blog-lang', lang); } catch (e) {}
+    syncTocHrefs();
+    updateSpy();
+  };
+
+  window.addEventListener('scroll', updateSpy);
+
+  var saved = null;
+  try { saved = localStorage.getItem('mia-blog-lang'); } catch (e) {}
+  if (saved === 'zh' || saved === 'en') {
+    window.setLang(saved);
+  } else {
+    syncTocHrefs();
+    updateSpy();
+  }
+})();
+</script>
+
+</body>
+</html>
