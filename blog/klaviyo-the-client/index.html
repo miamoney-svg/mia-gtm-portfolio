@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What does it mean when a SaaS company becomes the "client"? — Mia Zheng</title>
+<title>What Does It Mean When a SaaS Company Becomes the "Client"? — Mia Zheng</title>
 <meta name="description" content="Klaviyo is the one company in our industry that genuinely earns the title of 'the client.' A look at what its market position teaches the rest of us.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23AAEE44'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@ body.lang-en .prose > [data-lang="en"], body.lang-zh .prose > [data-lang="zh"] {
 /* NAV */
 .nav { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 4px; padding: 8px 8px 8px 24px; background: rgba(20,20,20,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 0.5px solid var(--border-dark-strong); border-radius: 100px; font-size: 14px; }
 .nav-logo, .nav-links a, .lang-switch button { white-space: nowrap; }
-.nav-logo { font-weight: 600; letter-spacing: -0.01em; margin-right: 24px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
+.nav-logo { font-weight: 600; letter-spacing: -0.01em; margin-right: 24px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); min-height: 32px; padding: 4px 0; }
 .nav-logo::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
 .nav-links { display: flex; gap: 4px; align-items: center; }
 .nav-links a { color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border-radius: 100px; transition: color 0.2s, background 0.2s; }
@@ -73,7 +73,7 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 .toc li a:hover { color: var(--text-primary); }
 .toc li a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
 .author-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-elev); border: 1px solid var(--border-dark); border-radius: 14px; }
-.author-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; overflow: hidden; }
+.author-avatar { overflow: hidden; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dim)); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 700; font-size: 16px; flex-shrink: 0; }
 .author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .author-name { font-weight: 500; font-size: 14px; }
 .author-role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
@@ -84,7 +84,7 @@ body.lang-en .lang-switch button[data-set="en"], body.lang-zh .lang-switch butto
 
 /* HERO */
 .breadcrumb { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; }
-.breadcrumb a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a { color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; display: inline-block; padding: 6px 4px; margin: -6px -4px; }
 .breadcrumb a:hover { color: var(--accent); }
 .tag-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
 .tag { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 12px; border-radius: 100px; background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(170,238,68,0.25); }
@@ -117,51 +117,10 @@ body.lang-zh .prose h3 { font-family: var(--font-sans-zh); letter-spacing: 0; }
 .prose ul, .prose ol { padding-left: 22px; }
 .prose li { margin-bottom: 10px; }
 .prose li::marker { color: var(--accent); }
-.prose blockquote {
-  position: relative;
-  border-left: 4px solid var(--accent);
-  background: linear-gradient(90deg, rgba(170,238,68,0.06) 0%, rgba(170,238,68,0.01) 60%, transparent 100%);
-  padding: 20px 24px 20px 28px;
-  margin: 36px 0;
-  border-radius: 4px 12px 12px 4px;
-  font-family: var(--font-serif); font-style: italic;
-  font-size: 22px; line-height: 1.55;
-  color: var(--text-primary);
-}
-.prose blockquote::before {
-  content: '\201C';
-  position: absolute; top: -6px; left: 18px;
-  font-family: var(--font-serif);
-  font-size: 60px; line-height: 1;
-  color: var(--accent); opacity: 0.35;
-  pointer-events: none;
-}
-.prose blockquote cite { display: block; font-family: var(--font-sans); font-style: normal; font-weight: 400; font-size: 13px; color: var(--text-tertiary); margin-top: 12px; }
-body.lang-zh .prose blockquote { font-family: var(--font-serif-zh); font-style: normal; font-weight: 500; }
+.prose blockquote { border-left: 3px solid var(--accent); padding: 8px 0 8px 24px; margin: 32px 0; font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--text-primary); }
+.prose blockquote cite { display: block; font-family: var(--font-sans); font-style: normal; font-size: 13px; color: var(--text-tertiary); margin-top: 12px; }
+body.lang-zh .prose blockquote { font-family: var(--font-serif-zh); font-style: normal; }
 body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
-
-/* Inline images — normalized by publish.mjs into <figure class="embedded-img">.
-   Centering + max-width fits any aspect ratio into the 720px column. */
-.prose figure.embedded-img { margin: 32px 0; text-align: center; }
-.prose figure.embedded-img img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 12px;
-  border: 1px solid var(--border-dark);
-  background: var(--bg-elev);
-}
-.prose figure.embedded-img figcaption {
-  margin-top: 12px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-tertiary);
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-/* Safety net: any stray <img> we missed still gets centered and fitted. */
-.prose > img, .prose p > img, .prose div > img { display: block; max-width: 100%; height: auto; margin: 32px auto; border-radius: 12px; border: 1px solid var(--border-dark); }
 
 /* CALLOUTS */
 .callout { padding: 24px 28px; border-radius: 16px; border: 1px solid var(--border-dark); background: var(--bg-elev); margin: 36px 0; display: flex; gap: 16px; align-items: flex-start; }
@@ -240,6 +199,23 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
   .lang-switch { margin-left: 4px; }
   .lang-switch button { padding: 11px 14px; font-size: 12px; }
 }
+
+/* Phones (<=400px): the article nav also carries a language switcher,
+   so drop the Blog link to keep the pill inside the screen. */
+@media (max-width: 400px) {
+  .nav { padding: 6px 6px 6px 14px; gap: 2px; }
+  .nav-logo { margin-right: 6px; font-size: 12px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-cta { padding: 6px 12px !important; font-size: 12px; }
+  .lang-switch { margin-left: 4px; }
+  .lang-switch button { padding: 9px 10px; font-size: 11px; }
+}
+
+/* Inline body links: widen the touch area without disturbing line rhythm. */
+.prose p > a:not(.bottom-cta-btn) {
+  padding: 4px 2px;
+  margin: -4px -2px;
+}
 </style>
 </head>
 <body class="lang-en">
@@ -278,6 +254,10 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
         <div class="sidebar-label"><span data-lang="en">On this page</span><span data-lang="zh">本文内容</span></div>
         <nav class="toc">
           <ul>
+            <li><a href="#numbers" data-anchor="numbers" class="active"><span data-lang="en">Start with the numbers</span><span data-lang="zh">数字优先</span></a></li>
+            <li><a href="#recognized" data-anchor="recognized"><span data-lang="en">Almost everyone recognizes Klaviyo</span><span data-lang="zh">几乎所有人都只认它</span></a></li>
+            <li><a href="#lose" data-anchor="lose"><span data-lang="en">Does this mean others are destined to lose?</span><span data-lang="zh">这是否意味着其他产品一定会输?</span></a></li>
+            <li><a href="#stages" data-anchor="stages"><span data-lang="en">Different stages, different strategies</span><span data-lang="zh">不同阶段,不同的增长策略</span></a></li>
           </ul>
         </nav>
       </details>
@@ -286,7 +266,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
     <div class="side-social">
       <div class="sidebar-label"><span data-lang="en">Find me</span><span data-lang="zh">找到我</span></div>
       <div class="social-list">
-        <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/mia-zheng-a31214310" class="social-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
           <span>LinkedIn</span>
         </a>
@@ -294,11 +274,7 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           <span>X / Twitter</span>
         </a>
-        <a href="#" class="social-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L4 12l6 3 2 5 3-4 5-12z"/></svg>
-          <span>小红书 · @馒头妈崽Mia</span>
-        </a>
-        <a href="https://github.com" class="social-link" target="_blank" rel="noopener">
+        <a href="https://github.com/miazheng-max" class="social-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 015.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.38-5.27 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.68.79.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
           <span>GitHub</span>
         </a>
@@ -308,15 +284,15 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
   <header class="article-hero">
     <div class="breadcrumb">
-      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; Industry Notes
+      <a href="../"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a> &nbsp;/&nbsp; <span data-lang="en">Industry Notes</span><span data-lang="zh">行业观察</span>
     </div>
 
     <div class="tag-row">
-      <span class="tag">Industry Notes</span>
+      <span class="tag"><span data-lang="en">Industry Notes</span><span data-lang="zh">行业观察</span></span>
     </div>
 
-    <h1 data-lang="en">What does it mean when a SaaS company becomes the "client"?</h1>
-    <h1 data-lang="zh">当一家SaaS被称为"甲方",是什么概念?</h1>
+    <h1 data-lang="en">What does it mean when a SaaS company becomes the <em>"client"</em>?</h1>
+    <h1 data-lang="zh">当一家SaaS被称为<em>"甲方"</em>,是什么概念?</h1>
 
     <div class="meta-row">
       <span class="meta-author"><img class="meta-avatar" src="../images/avatar.jpg" alt="Mia Zheng" loading="lazy"><strong>Mia Zheng</strong></span>
@@ -327,10 +303,13 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
       <span data-lang="en">6 min read</span>
       <span data-lang="zh">阅读约 6 分钟</span>
       <span class="meta-dot"></span>
-      <span>Industry Notes</span>
+      <span data-lang="en">Industry Notes</span>
+      <span data-lang="zh">行业观察</span>
     </div>
 
-    <div class="cover"><span style="color:var(--text-tertiary);font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.15em">Cover</span></div>
+    <div class="cover">
+      <img src="../images/saas-as-client-hero.jpg" alt="When does a SaaS company become the client? A lesson from Klaviyo's market position — 200K+ brands, $1.5B+ ARR, a powerful agency ecosystem.">
+    </div>
   </header>
 
   <div class="article-body">
@@ -338,6 +317,78 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
       <!-- ================ ENGLISH ================ -->
       <div data-lang="en">
+        <p>When you see this title, you may find it strange. Shouldn't a SaaS company be the vendor rather than the client?</p>
+
+        <p>The inspiration for this article came from a call I had with a marketing agency. In our industry, there is one company that can genuinely be described as the client: <strong>Klaviyo</strong>.</p>
+
+        <p>Some people may think I'm crazy for talking about one of my competitors. But from my perspective, every company or individual we compete with has something worth learning from — whether it is how they build their product or how they market themselves.</p>
+
+        <p>Klaviyo is still an industry pioneer to me, and a competitor I respect.</p>
+
+        <h2 id="numbers">Start with the numbers</h2>
+
+        <div class="stat-pull">
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">200K+</div>
+            <div class="stat-pull-label">clients in Q2 2026</div>
+          </div>
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">$1.53B</div>
+            <div class="stat-pull-label">estimated 2026 ARR</div>
+          </div>
+        </div>
+
+        <p>What does that actually mean? Many of us are still thinking about ARR in millions. Klaviyo, however, is already operating at a <em>billion-dollar</em> annual revenue scale.</p>
+
+        <h2 id="recognized">Almost everyone recognizes Klaviyo</h2>
+
+        <p>I am not only talking about clients. I am also talking about agencies.</p>
+
+        <p>Let me share what I have observed in mainland China. Among almost all the clients I have interacted with, excluding SMB accounts that have not yet started marketing, nearly 90% have either used Klaviyo or mentioned it to me. That percentage is remarkable.</p>
+
+        <blockquote>
+          Klaviyo is the benchmark in this industry, so it is impossible not to use it.
+          <cite>— A client, on why they chose Klaviyo</cite>
+        </blockquote>
+
+        <p>I was genuinely surprised by Klaviyo's position in customers' minds. I also noticed that Klaviyo recently established its APAC headquarters in Singapore. This suggests that APAC may not yet be one of its strongest markets, which could mean the company has even more room to grow in the region.</p>
+
+        <div class="news-clip">
+          <div class="news-clip-bar">
+            <span class="news-clip-dot"></span><span class="news-clip-dot"></span><span class="news-clip-dot"></span>
+            <span class="news-clip-label">News clipping</span>
+          </div>
+          <img src="../images/klaviyo-news-clip.jpg" alt="News coverage: Klaviyo agency deal accelerates AI agent strategy as revenue grows 26% to $370.6 million">
+          <div class="news-clip-caption">Coverage of Klaviyo's Q2 2026 earnings and its acquisition of Agency's team and technology — cited here for context, not reproduced in full.</div>
+        </div>
+
+        <p>You can also take a look at how many agency partners Klaviyo lists on its official website. Many of these agencies rely heavily on the Klaviyo ecosystem. They use the title "Klaviyo Elite Partner" as a core part of their positioning, because brands may choose an agency partly because of that qualification.</p>
+
+        <div class="callout callout--info">
+          <div class="callout-icon">i</div>
+          <div class="callout-body">
+            <div class="callout-title">The agency flywheel</div>
+            <p>The managed-services and agency ecosystem is one of Klaviyo's strongest growth advantages. Reportedly, by early 2026, its agency and systems-integrator network, together with channel marketing, had influenced more than 40% of new business.</p>
+          </div>
+        </div>
+
+        <h2 id="lose">Does this mean other products are destined to lose?</h2>
+
+        <p>Not necessarily.</p>
+
+        <p>We have successfully migrated several large clients. I cannot share my strategy publicly, but as I have said before, no product is perfect. Every client has different needs, and there is always a point of leverage if you look closely enough.</p>
+
+        <p>However, if you want to compete systematically, you still need a systematic marketing and channel strategy. More importantly, your product itself needs to withstand scrutiny. Otherwise, the client relationships you worked so hard to maintain will eventually break down.</p>
+
+        <h2 id="stages">Different stages require different growth strategies</h2>
+
+        <p>Every product inevitably goes through several stages. I call them:</p>
+
+        <p><em>PMF → aggressive, spend-heavy marketing → self-sustaining growth at scale</em></p>
+
+        <p>The growth strategy is different at each stage.</p>
+
+        <p>If this gives you something to think about, I would love to hear your perspective in the comments.</p>
 
         <div class="bottom-cta">
           <h3>More like this?</h3>
@@ -348,7 +399,79 @@ body.lang-zh .prose blockquote cite { font-family: var(--font-sans-zh); }
 
       <!-- ================ CHINESE ================ -->
       <div data-lang="zh">
-(existing article, not stored as draft)
+        <p>看到这个标题你可能会觉得奇怪——SaaS不应该是乙方吗?</p>
+
+        <p>写这篇文章的灵感,来自我最近和一家营销机构的一通电话。在我们这个行业里,确实有一家公司够格被称为"甲方",那就是 <strong>Klaviyo</strong>。</p>
+
+        <p>有人可能会觉得我有点奇怪,为什么要写一篇关于自己竞品的文章。但站在我的角度,任何有竞争关系的公司或者人,身上都有值得学习的地方——无论是产品打法,还是营销方式。</p>
+
+        <p>Klaviyo对我来说始终是行业前辈,也是值得尊敬的对手。</p>
+
+        <h2 id="numbers-zh">数字优先</h2>
+
+        <div class="stat-pull">
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">20万+</div>
+            <div class="stat-pull-label">26年Q2品牌客户</div>
+          </div>
+          <div class="stat-pull-item">
+            <div class="stat-pull-num">$15.3亿</div>
+            <div class="stat-pull-label">26年预计ARR</div>
+          </div>
+        </div>
+
+        <p>这是什么概念?我们大多数公司的ARR还是以M(百万)为单位在算,而Klaviyo一年的收入已经是以<em>B(十亿)</em>起步了。</p>
+
+        <h2 id="recognized-zh">几乎所有人都只认它</h2>
+
+        <p>这里说的不只是品牌客户,还包括代运营机构(agency)。</p>
+
+        <p>我可以跟你们讲讲中国大陆市场的情况:我接触过的所有客户里,除了那些还没开始做营销的SMB账户,几乎90%的客户都用过或者提到过Klaviyo。这个比例相当夸张。</p>
+
+        <blockquote>
+          毕竟Klaviyo是这个行业的标杆,不可能不用它。
+          <cite>— 一位客户,谈为什么选择Klaviyo</cite>
+        </blockquote>
+
+        <p>我确实很惊讶Klaviyo在客户心中的地位有这么高。我留意到Klaviyo刚在新加坡建立了亚太总部,这说明APAC目前还不是他们的主力市场,未来可能会加大投入力度。</p>
+
+        <div class="news-clip">
+          <div class="news-clip-bar">
+            <span class="news-clip-dot"></span><span class="news-clip-dot"></span><span class="news-clip-dot"></span>
+            <span class="news-clip-label">新闻截图</span>
+          </div>
+          <img src="../images/klaviyo-news-clip.jpg" alt="新闻报道:Klaviyo收购Agency加速AI agent战略,营收增长26%至3.706亿美元">
+          <div class="news-clip-caption">Klaviyo 26年Q2财报及收购Agency团队和技术的新闻报道截图——仅作背景引用,未转载全文。</div>
+        </div>
+
+        <p>另外你可以去看看他们官网挂出来的合作代运营机构数量,这些agency几乎是靠Klaviyo吃饭的。他们把"Klaviyo Elite Partner"作为宣传自己的核心卖点,因为品牌客户会因为这个头衔选择这家agency。</p>
+
+        <div class="callout callout--info">
+          <div class="callout-icon">i</div>
+          <div class="callout-body">
+            <div class="callout-title">代理商飞轮</div>
+            <p>代运营/Agency生态是Klaviyo一个非常强的增长优势——据说到2026年初,代理商和系统集成商网络这条渠道,已经影响了超过40%的新签业务。</p>
+          </div>
+        </div>
+
+        <h2 id="lose-zh">这是否意味着其他产品一定会输?</h2>
+
+        <p>不一定。</p>
+
+        <p>我们确实成功地从Klaviyo手里搬迁过一些大客户。具体策略我不方便公开讲,但正如我之前说过的,没有一个产品是完美的,因为每个客户的需求都不一样,你总能找到值得撬动他们的点。</p>
+
+        <p>但如果你想要系统性地正面竞争,还是需要建立成体系的营销策略和渠道,更重要的是,你的产品本身也要经得起推敲——不然费尽心思维系的客户关系,最终还是会破裂。</p>
+
+        <h2 id="stages-zh">不同阶段,不同的增长策略</h2>
+
+        <p>对于一个产品来说,必然会经历几个阶段,我把它们称为:</p>
+
+        <p><em>PMF —— 烧钱营销 —— 规模自增长</em></p>
+
+        <p>不同阶段,产品的增长方式是不一样的。</p>
+
+        <p>如果你看到这里也有自己的想法,欢迎留言聊聊你的看法。</p>
+
         <div class="bottom-cta">
           <h3>想看更多这样的内容?</h3>
           <p>我会写 GTM、GEO、AI agents、以及放大一款 B2B 产品过程中那些混乱的中间地带。每 2–3 天更新一篇。</p>
