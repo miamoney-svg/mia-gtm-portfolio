@@ -373,7 +373,7 @@ body {
 .tag-icon { font-size: 14px; }
 
 /* =============== SECTION HEADERS =============== */
-.section { padding: 120px 0; position: relative; }
+.section { padding: 80px 0; position: relative; }
 .section-light { background: var(--bg-light); color: var(--text-dark); }
 .section-light .text-secondary { color: var(--text-dark-secondary); }
 .section-eyebrow {
@@ -505,7 +505,7 @@ body {
 /* =============== AI WORKFLOW SECTION =============== */
 .workflow {
   background: var(--bg-dark);
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1097,9 +1097,16 @@ body {
 /* =============== CONTACT =============== */
 .contact {
   background: var(--bg-dark);
-  padding: 140px 0;
+  padding: 96px 0;
   position: relative;
   overflow: hidden;
+}
+/* Blog → Open Source → Contact: same dark background, so keep the gaps tight */
+.section.blog-preview, #opensource.section { padding: 48px 0; }
+.section.contact { padding: 48px 0 96px; }
+@media (max-width: 960px) {
+  .section.blog-preview, #opensource.section { padding: 36px 0; }
+  .section.contact { padding: 36px 0 64px; }
 }
 .contact::before {
   content: ''; position: absolute; inset: 0;
@@ -1222,7 +1229,7 @@ body {
   .nav-links a[href*="#"]:not(.nav-cta) { display: none; }
   .nav-cta { margin-left: 0 !important; padding: 6px 14px !important; }
   .container { padding: 0 20px; }
-  .section { padding: 80px 0; }
+  .section { padding: 56px 0; }
   .hero { padding: 120px 0 60px; }
   /* size the headline so each of the three lines stays on one row */
   .hero-headline { font-size: clamp(30px, 8.6vw, 46px); max-width: none; }
