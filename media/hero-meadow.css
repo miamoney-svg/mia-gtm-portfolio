@@ -12,12 +12,11 @@
   color: var(--meadow-cream);
 }
 #hero .meadow-scene { position: absolute; inset: 0; z-index: 0; }
-#hero .meadow-landscape, #hero canvas {
+#hero .meadow-landscape {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; pointer-events: none;
 }
 #hero .meadow-landscape { transform-origin: 60% 60%; }
-#hero canvas { z-index: 1; }
 #hero::before {
   content: ''; position: absolute; inset: 0; z-index: 1;
   pointer-events: none;
