@@ -106,196 +106,7 @@ body {
 }
 .nav-cta:hover { background: #BBFF55 !important; transform: translateY(-1px); }
 
-/* =============== HERO =============== */
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 140px 0 80px;
-  background: #060A06;
-  overflow: hidden;
-}
-
-/* Base deep green ambient layer */
-.hero::before {
-  content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 40% at 15% 50%, rgba(30, 80, 20, 0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 50% at 85% 30%, rgba(20, 70, 10, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(204, 255, 0, 0.03) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(8, 25, 8, 0.95) 0%, #060A06 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Flowing light streaks — like Advibe's curved light bands */
-.hero::after {
-  content: ''; position: absolute; inset: 0;
-  background-image:
-    /* Main bright streak top-left */
-    radial-gradient(ellipse 30% 6% at 20% 38%, rgba(204, 255, 0, 0.07) 0%, transparent 100%),
-    /* Secondary streak bottom-right */
-    radial-gradient(ellipse 22% 5% at 78% 62%, rgba(204, 255, 0, 0.05) 0%, transparent 100%),
-    /* Faint wide glow center */
-    radial-gradient(ellipse 60% 25% at 50% 50%, rgba(50, 130, 15, 0.04) 0%, transparent 70%),
-    /* Accent hot spot upper right */
-    radial-gradient(ellipse 16% 16% at 88% 15%, rgba(204, 255, 0, 0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  animation: heroGlow 8s ease-in-out infinite alternate;
-}
-
-@keyframes heroGlow {
-  0%   {
-    opacity: 1;
-    background-image:
-      radial-gradient(ellipse 30% 6% at 20% 38%, rgba(204, 255, 0, 0.07) 0%, transparent 100%),
-      radial-gradient(ellipse 22% 5% at 78% 62%, rgba(204, 255, 0, 0.05) 0%, transparent 100%),
-      radial-gradient(ellipse 60% 25% at 50% 50%, rgba(50, 130, 15, 0.04) 0%, transparent 70%),
-      radial-gradient(ellipse 16% 16% at 88% 15%, rgba(204, 255, 0, 0.04) 0%, transparent 70%);
-  }
-  50%  {
-    background-image:
-      radial-gradient(ellipse 34% 7% at 25% 42%, rgba(204, 255, 0, 0.09) 0%, transparent 100%),
-      radial-gradient(ellipse 26% 6% at 72% 58%, rgba(204, 255, 0, 0.06) 0%, transparent 100%),
-      radial-gradient(ellipse 65% 28% at 48% 52%, rgba(60, 150, 20, 0.05) 0%, transparent 70%),
-      radial-gradient(ellipse 20% 20% at 84% 18%, rgba(204, 255, 0, 0.05) 0%, transparent 70%);
-  }
-  100% {
-    background-image:
-      radial-gradient(ellipse 26% 5% at 18% 35%, rgba(204, 255, 0, 0.06) 0%, transparent 100%),
-      radial-gradient(ellipse 20% 4% at 80% 65%, rgba(204, 255, 0, 0.04) 0%, transparent 100%),
-      radial-gradient(ellipse 55% 22% at 52% 48%, rgba(45, 115, 12, 0.03) 0%, transparent 70%),
-      radial-gradient(ellipse 14% 14% at 90% 12%, rgba(204, 255, 0, 0.03) 0%, transparent 70%);
-  }
-}
-
-/* Floating green orbs — the signature Advibe blobs */
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-orb-1 {
-  width: 420px; height: 420px;
-  top: -80px; left: -60px;
-  background: radial-gradient(circle, rgba(60, 160, 20, 0.12) 0%, transparent 70%);
-  animation: orbFloat1 12s ease-in-out infinite;
-}
-.hero-orb-2 {
-  width: 320px; height: 320px;
-  bottom: 0; right: 10%;
-  background: radial-gradient(circle, rgba(80, 180, 30, 0.09) 0%, transparent 70%);
-  animation: orbFloat2 15s ease-in-out infinite;
-}
-.hero-orb-3 {
-  width: 200px; height: 200px;
-  top: 30%; right: 25%;
-  background: radial-gradient(circle, rgba(204, 255, 0, 0.06) 0%, transparent 70%);
-  filter: blur(40px);
-  animation: orbFloat3 10s ease-in-out infinite;
-}
-
-@keyframes orbFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-  33%       { transform: translate(40px, 30px) scale(1.08); opacity: 1; }
-  66%       { transform: translate(-20px, 50px) scale(0.95); opacity: 0.85; }
-}
-@keyframes orbFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-  40%       { transform: translate(-50px, -30px) scale(1.12); opacity: 0.9; }
-  70%       { transform: translate(30px, -20px) scale(0.9); opacity: 0.75; }
-}
-@keyframes orbFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  50%       { transform: translate(-30px, 40px) scale(1.2); opacity: 0.9; }
-}
-
-/* Subtle noise grain texture for depth */
-.hero-grain {
-  position: absolute; inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
-.hero-inner { position: relative; z-index: 2; }
-
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px;
-  border: 0.5px solid var(--border-dark-strong);
-  border-radius: 100px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-bottom: 32px;
-  background: rgba(255,255,255,0.02);
-}
-.hero-badge::before {
-  content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
-  50% { box-shadow: 0 0 0 6px transparent; }
-}
-
-.hero-eyebrow {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-family: var(--font-mono);
-  letter-spacing: -0.01em;
-}
-.hero-eyebrow .wave { display: inline-block; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
-@keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-}
-
-.hero-headline {
-  font-size: clamp(48px, 7.5vw, 104px);
-  font-weight: 600;
-  /* 1.06 (not 0.98) so descenders like the "g" in "agents" are never clipped */
-  line-height: 1.06;
-  letter-spacing: -0.04em;
-  margin-bottom: 28px;
-  max-width: 18ch;
-  padding-bottom: 0.08em;
-}
-.hero-headline .line { display: block; }
-.hero-headline .line-muted { color: var(--text-secondary); }
-.hero-headline .accent { color: var(--accent); }
-.hero-headline .serif {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-.hero-sub {
-  font-size: clamp(17px, 1.4vw, 20px);
-  color: var(--text-secondary);
-  max-width: 56ch;
-  line-height: 1.55;
-  margin-bottom: 44px;
-}
-.hero-sub strong { color: var(--text-primary); font-weight: 500; }
-
-.hero-cta-row {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  margin-bottom: 56px;
-}
+/* =============== SHARED BUTTONS =============== */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 26px;
@@ -323,25 +134,6 @@ body {
   transition: transform 0.2s;
 }
 .btn:hover .btn-arrow { transform: translate(2px, -2px); }
-
-.hero-credentials {
-  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-  font-size: 13px; color: var(--text-tertiary);
-  font-family: var(--font-mono);
-}
-.hero-credentials span { display: flex; align-items: center; gap: 8px; }
-.hero-credentials .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
-.hero-credentials .scroll-arrow {
-  display: inline-block;
-  animation: scroll-bob 1.8s ease-in-out infinite;
-}
-@keyframes scroll-bob {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(4px); opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-credentials .scroll-arrow { animation: none; }
-}
 
 /* =============== POSITIONING STRIP =============== */
 .positioning {
@@ -1239,9 +1031,7 @@ body {
   .nav-cta { margin-left: 0 !important; padding: 6px 14px !important; }
   .container { padding: 0 20px; }
   .section { padding: 56px 0; }
-  .hero { padding: 120px 0 60px; }
   /* size the headline so each of the three lines stays on one row */
-  .hero-headline { font-size: clamp(30px, 8.6vw, 46px); max-width: none; }
   .bento { grid-template-columns: 1fr; }
   .bento-cell { min-height: 0; }
   .blog-cards { grid-template-columns: 1fr; }
@@ -1256,7 +1046,6 @@ body {
   .exp-arrow { display: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-photo { max-width: 320px; }
-  .hero-credentials { font-size: 11px; gap: 12px; }
   .positioning-tags .tag { font-size: 12px; padding: 8px 14px; }
   .positioning { padding: 48px 0; }
   .bento-cell { padding: 24px; }
@@ -1528,6 +1317,9 @@ body {
   }
 }
 </style>
+<link rel="preload" as="image" href="media/hero-meadow.jpg">
+<link rel="stylesheet" href="media/hero-meadow.css">
+<script src="media/hero-meadow.js" defer></script>
 </head>
 <body>
 
@@ -1544,36 +1336,26 @@ body {
 </nav>
 
 <!-- ============== HERO ============== -->
-<section class="hero" id="hero">
-  <!-- Glowing orbs -->
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-grain"></div>
-
-  <div class="container hero-inner">
-    <div class="hero-badge"><span>What I do</span></div>
-    <p class="hero-eyebrow"><span class="wave">👋</span> Hi, I'm Mia Zheng —</p>
-    <h1 class="hero-headline">
-      <span class="line">I ship GTM.</span>
-      <span class="line">I <span class="accent">build</span> AI agents.</span>
-      <span class="line line-muted">I write about both.</span>
-    </h1>
-    <p class="hero-sub">
-      Seven years in SaaS, and I'm still chasing the same loop:
-      <strong>demand gen, activation, retention</strong> — that's where revenue actually happens.
-      This is where I share what I'm learning about running it with a small team
-      plus a team of <strong>AI agents</strong>.
+<section class="meadow-hero" id="hero" aria-labelledby="hero-title">
+  <div class="meadow-scene" aria-hidden="true">
+    <img class="meadow-landscape" src="media/hero-meadow.jpg" width="1400" height="876" alt="" fetchpriority="high" decoding="async">
+    <canvas hidden></canvas>
+  </div>
+  <div class="meadow-copy">
+    <p class="meadow-overline">Mia Zheng · GTM strategist &amp; AI builder</p>
+    <h1 id="hero-title">Finding new paths<br>to growth.</h1>
+    <p class="meadow-description">
+      <span>I’m Mia. Seven years in SaaS, still curious about what works next.</span>
+      <span>I turn market insights into GTM experiments, build AI agents,</span>
+      <span>and share what I learn along the way.</span>
     </p>
-    <div class="hero-cta-row">
-      <a href="blog/" class="btn btn-primary">Read the Blog <span class="btn-arrow">↗</span></a>
-      <a href="#workflow" class="btn btn-secondary">How I Work <span class="btn-arrow">↓</span></a>
-    </div>
-    <div class="hero-credentials">
-      <span>Scroll down for how to reach me</span>
-      <span class="scroll-arrow" aria-hidden="true">↓</span>
+    <div class="meadow-actions">
+      <a class="meadow-primary" href="#workflow">Explore my work <span aria-hidden="true">↗</span></a>
+      <a class="meadow-blog" href="blog/">Read my blog <span aria-hidden="true">→</span></a>
     </div>
   </div>
+  <a class="meadow-note" href="#impact"><span aria-hidden="true">↓</span>A little further down: ideas, experiments, and things I’ve shipped.</a>
+  <button class="meadow-pause" type="button" aria-pressed="false" hidden>Pause motion</button>
 </section>
 
 <!-- ============== POSITIONING STRIP ============== -->
