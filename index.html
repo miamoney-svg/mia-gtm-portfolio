@@ -1339,10 +1339,33 @@ body {
 <section class="meadow-hero" id="hero" aria-labelledby="hero-title">
   <div class="meadow-scene" aria-hidden="true">
     <img class="meadow-landscape" src="media/hero-meadow.jpg" width="1400" height="876" alt="" fetchpriority="high" decoding="async">
+    <svg class="meadow-grass" viewBox="0 0 1400 876" preserveAspectRatio="none" hidden>
+      <defs>
+        <filter id="meadow-breeze" x="-2%" y="-2%" width="104%" height="104%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.035" numOctaves="2" seed="8" result="breeze"/>
+          <feOffset in="breeze" result="moving-breeze">
+            <animate attributeName="dx" values="0;18;0" dur="7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          </feOffset>
+          <feDisplacementMap in="SourceGraphic" in2="moving-breeze" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <radialGradient id="meadow-grass-fade">
+          <stop offset="0" stop-color="white" stop-opacity="0.9"/>
+          <stop offset="0.65" stop-color="white" stop-opacity="0.65"/>
+          <stop offset="1" stop-color="black"/>
+        </radialGradient>
+        <mask id="meadow-grass-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1400" height="876">
+          <ellipse cx="180" cy="880" rx="650" ry="200" fill="url(#meadow-grass-fade)"/>
+          <ellipse cx="1390" cy="880" rx="150" ry="155" fill="url(#meadow-grass-fade)"/>
+        </mask>
+      </defs>
+      <g mask="url(#meadow-grass-mask)">
+        <image href="media/hero-meadow.jpg" width="1400" height="876" filter="url(#meadow-breeze)"/>
+      </g>
+    </svg>
   </div>
   <div class="meadow-copy">
     <p class="meadow-overline">Mia Zheng · GTM strategist &amp; AI builder</p>
-    <h1 id="hero-title">Finding new paths<br>to growth.</h1>
+    <h1 id="hero-title">Finding new paths<br><span class="meadow-title-end">to growth.</span></h1>
     <p class="meadow-description">
       <span>I’m Mia. Seven years in SaaS, still curious about what works next.</span>
       <span>I turn market insights into GTM experiments, build AI agents,</span>
